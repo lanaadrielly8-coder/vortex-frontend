@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#7C3AED" />
+    <meta name="description" content="Vortex AI — A IA mais completa para criadores de conteúdo" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Vortex AI" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Vortex AI" />
+    <meta property="og:description" content="A IA mais completa para criadores de conteúdo brasileiros" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Apple icons -->
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    
+    <title>Vortex AI</title>
+    
+    <style>
+      /* Prevenir flash branco no carregamento */
+      html, body { background: #0a0a0f; margin: 0; padding: 0; }
+      /* Safe area para iPhone com notch */
+      #root { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Registrar Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('[Vortex] PWA ativo:', reg.scope))
+            .catch(err => console.log('[Vortex] SW erro:', err));
+        });
+      }
+    </script>
+  </body>
+</html>

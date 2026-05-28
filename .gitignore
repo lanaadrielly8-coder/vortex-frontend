@@ -1,0 +1,12 @@
+﻿node_modules/
+.venv/
+dist/
+.env
+.wwebjs_auth/
+.wwebjs_cache/
+vortex_brain.db
+__pycache__/
+*.mp4
+*.db
+*.pyc
+.DS_Store

@@ -1,0 +1,46 @@
+{
+  "name": "Vortex AI",
+  "short_name": "Vortex",
+  "description": "A IA mais completa para criadores de conteúdo brasileiros",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#7C3AED",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "lang": "pt-BR",
+  "shortcuts": [
+    {
+      "name": "Chat",
+      "url": "/?aba=chat",
+      "description": "Abrir Vortex Chat"
+    },
+    {
+      "name": "Roteiro",
+      "url": "/?aba=roteiro",
+      "description": "Gerar Roteiro Viral"
+    },
+    {
+      "name": "Tendências",
+      "url": "/?aba=tendencias",
+      "description": "Ver Tendências"
+    }
+  ]
+}
