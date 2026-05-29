@@ -92,7 +92,7 @@ html, body, #root { height: 100%; background: var(--bg); color: var(--text); fon
 .pill-dot { width: 5px; height: 5px; border-radius: 50%; }
 .hamburger { display: none; background: transparent; border: .5px solid var(--border2); border-radius: var(--r-sm); color: var(--text2); padding: 7px; cursor: pointer; font-size: 18px; }
 .scroll { flex: 1; overflow-y: auto; position: relative; }
-.page { max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+.page { max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 6rem; }
 .page-header { margin-bottom: 2rem; }
 .eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; }
 .eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cyan); }
@@ -155,8 +155,8 @@ textarea.input { resize: vertical; min-height: 90px; line-height: 1.6; }
 .msg-avatar-bot { background: linear-gradient(135deg, rgba(123,47,255,.5), rgba(157,92,255,.3)); border: .5px solid rgba(123,47,255,.6); color: var(--purple3); box-shadow: 0 0 10px rgba(123,47,255,.3); }
 .msg-avatar-user { background: rgba(255,255,255,.07); border: .5px solid var(--border2); color: var(--text2); }
 .msg-bubble { max-width: 72%; padding: 12px 16px; font-size: 14px; line-height: 1.75; word-break: break-word; }
-.msg-bubble.bot { background: var(--bg3); border: .5px solid var(--border2); color: var(--text); border-radius: 4px 16px 16px 16px; }
-.msg-bubble.user { background: linear-gradient(135deg, rgba(123,47,255,.35), rgba(157,92,255,.25)); border: .5px solid rgba(123,47,255,.5); color: var(--text); border-radius: 16px 4px 16px 16px; white-space: pre-wrap; box-shadow: 0 0 16px rgba(123,47,255,.15); }
+.msg-bubble.bot { background: rgba(17,17,32,.95); border: .5px solid rgba(123,47,255,.3); color: #e8e0ff; border-radius: 4px 16px 16px 16px; }
+.msg-bubble.user { background: linear-gradient(135deg, rgba(123,47,255,.4), rgba(157,92,255,.3)); border: .5px solid rgba(123,47,255,.6); color: #ffffff; border-radius: 16px 4px 16px 16px; white-space: pre-wrap; box-shadow: 0 0 16px rgba(123,47,255,.15); }
 .msg-name { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--purple2); margin-bottom: 5px; font-family: var(--fh); }
 .md p { margin-bottom: .6rem; } .md p:last-child { margin-bottom: 0; }
 .md strong { color: var(--text); font-weight: 700; } .md em { color: var(--purple3); font-style: italic; }
