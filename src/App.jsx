@@ -3994,7 +3994,7 @@ function GeradorVideos() {
             </div>
           )}
         </div>
-      ) 
+      )}
     </div>
   );
 }
@@ -5044,7 +5044,12 @@ export default function App() {
         if(params.get("login")==="ok")window.history.replaceState({},"",window.location.pathname);
         if(params.get("pagamento")==="ok"){window.history.replaceState({},"",window.location.pathname);setTimeout(()=>alert("✅ Pagamento confirmado! Créditos adicionados."),1000);}
         const r=await fetch(`${BACKEND}/auth/me`).catch(()=>null);
-        if(r&&r.ok){const d=await r.json();setUsuario(d.usuario);setSaldo(d.usuario.creditos||0);}
+        if(r&&r.ok){
+          const d=await r.json();
+          setUsuario(d.usuario);
+          setSaldo(d.usuario.creditos||0);
+          setScreen("app"); // já logado → pular welcome
+        }
       }catch{}
       setLoadingAuth(false);
     };
@@ -5067,11 +5072,69 @@ export default function App() {
     score_viral:<ScoreViral/>,creditos:<Creditos/>,config:<Configuracoes/>,
   };
 
+  // Modal de login — aparece quando usuário tenta usar feature paga
+  const [showLogin, setShowLogin] = useState(false);
+  const [loginMsg, setLoginMsg] = useState("");
+
+  // Função global para pedir login
+  window.__vortexPedirLogin = (msg="Faça login para continuar") => {
+    setLoginMsg(msg);
+    setShowLogin(true);
+  };
+
   return(
     <>
       <style>{STYLE}</style>
-      {screen==="welcome"&&<WelcomeScreen onEnter={()=>setScreen("onboarding")}/>}
-      {screen==="onboarding"&&<Onboarding onConcluir={()=>setScreen("app")}/>}
+
+      {/* Modal de Login — aparece sobre qualquer tela */}
+      {showLogin && (
+        <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.85)",zIndex:9999,
+          display:"flex",alignItems:"center",justifyContent:"center",padding:16}}>
+          <div style={{background:"#111118",border:"1px solid #1e1e2e",borderRadius:16,
+            padding:"2rem",maxWidth:380,width:"100%",textAlign:"center"}}>
+            <div style={{fontSize:32,marginBottom:12}}>✦</div>
+            <div style={{fontFamily:"var(--fh)",fontSize:20,fontWeight:800,marginBottom:8}}>
+              Acesse o Vortex
+            </div>
+            <div style={{fontSize:13,color:"var(--text3)",marginBottom:24,lineHeight:1.6}}>
+              {loginMsg}
+            </div>
+
+            {/* Google */}
+            <a href={BACKEND+"/auth/google"}
+              style={{display:"flex",alignItems:"center",justifyContent:"center",gap:10,
+                padding:"12px 20px",background:"#fff",color:"#111",borderRadius:10,
+                textDecoration:"none",fontWeight:700,fontSize:14,marginBottom:10,width:"100%"}}>
+              <span>🔑</span> Entrar com Google
+            </a>
+
+            {/* Email */}
+            <button onClick={()=>{
+              const email = prompt("Seu email:");
+              if(email) window.location.href = BACKEND+"/auth/email?email="+encodeURIComponent(email);
+            }}
+              style={{display:"flex",alignItems:"center",justifyContent:"center",gap:10,
+                padding:"12px 20px",background:"rgba(255,255,255,.08)",color:"var(--text)",
+                border:"1px solid var(--border)",borderRadius:10,fontWeight:700,fontSize:14,
+                marginBottom:10,width:"100%",cursor:"pointer"}}>
+              <span>📧</span> Entrar com Email
+            </button>
+
+            {/* Continuar sem conta */}
+            <button onClick={()=>setShowLogin(false)}
+              style={{fontSize:12,color:"var(--text3)",background:"none",border:"none",
+                cursor:"pointer",textDecoration:"underline",marginTop:8}}>
+              Continuar sem conta (plano Free)
+            </button>
+
+            <div style={{fontSize:10,color:"#444",marginTop:16}}>
+              Ao entrar você concorda com nossos termos de uso
+            </div>
+          </div>
+        </div>
+      )}
+
+      {screen==="welcome"&&<WelcomeScreen onEnter={()=>setScreen("app")}/>}
       {screen==="app"&&<>
         <div className="ambient"><div className="amb1"/><div className="amb2"/></div>
         <div className="shell">
