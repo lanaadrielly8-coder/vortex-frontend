@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 
 
 
-// URL do backend — troca aqui quando migrar de servidor
+// URL do backend ï¿½ troca aqui quando migrar de servidor
 
 const BACKEND = "https://vortex-backend1.onrender.com";
 
@@ -12,7 +12,7 @@ const BACKEND = "https://vortex-backend1.onrender.com";
 
 // ==============================
 
-// Session ID único por dispositivo — identifica o usuário sem login
+// Session ID ï¿½nico por dispositivo ï¿½ identifica o usuï¿½rio sem login
 
 function getSessionId() {
 
@@ -32,7 +32,7 @@ function getSessionId() {
 
 
 
-// Headers padrão com Session-ID para todos os requests
+// Headers padrï¿½o com Session-ID para todos os requests
 
 function vortexHeaders(extra={}) {
 
@@ -68,7 +68,7 @@ async function callClaude(systemPrompt, userPrompt, historico=[]) {
 
   } catch (networkErr) {
 
-    throw new Error("?? Backend offline — inicie o servidor Python na porta 8082");
+    throw new Error("?? Backend offline ï¿½ inicie o servidor Python na porta 8082");
 
   }
 
@@ -630,13 +630,13 @@ const PACOTES = [
 
 ];
 
-const NICHOS_OB = ["Terror / True Crime","Gaming","Educacional","Humor","Lifestyle","Tecnologia","Fitness","Culinária","Finanças","Beleza","Música","Esportes","Empreendedorismo","Viagem","Outro"];
+const NICHOS_OB = ["Terror / True Crime","Gaming","Educacional","Humor","Lifestyle","Tecnologia","Fitness","Culinï¿½ria","Finanï¿½as","Beleza","Mï¿½sica","Esportes","Empreendedorismo","Viagem","Outro"];
 
 const PLATS_OB = ["TikTok","Instagram","YouTube","YouTube Shorts","Twitter / X","Kwai","Pinterest"];
 
-const DIAS_OB = ["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"];
+const DIAS_OB = ["Seg","Ter","Qua","Qui","Sex","Sï¿½b","Dom"];
 
-const TONS_OB = ["Descontraído","Educativo","Engraçado","Motivacional","Direto","Storytelling","Polêmico","Íntimo"];
+const TONS_OB = ["Descontraï¿½do","Educativo","Engraï¿½ado","Motivacional","Direto","Storytelling","Polï¿½mico","ï¿½ntimo"];
 
 const OBJS_OB = ["Crescer seguidores","Aumentar engajamento","Monetizar","Construir autoridade","Viralizar"];
 
@@ -648,27 +648,27 @@ const GRUPOS = [
 
     { id:"roteiro",       label:"Gerar Roteiro",      icon:"??" },
 
-    { id:"tendencias",    label:"Tendências",         icon:"??" },
+    { id:"tendencias",    label:"Tendï¿½ncias",         icon:"??" },
 
     { id:"imagens",       label:"Imagens IA",         icon:"??" },
 
-    { id:"videos",        label:"Vídeos IA",          icon:"??" },
+    { id:"videos",        label:"Vï¿½deos IA",          icon:"??" },
 
   ]},
 
   { label: "Ferramentas", itens: [
 
-    { id:"video_faceless",label:"Vídeo Faceless",     icon:"??" },
+    { id:"video_faceless",label:"Vï¿½deo Faceless",     icon:"??" },
 
     { id:"voz",           label:"Clonar Voz",         icon:"???" },
 
-    { id:"musica",        label:"Gerar Música",       icon:"??" },
+    { id:"musica",        label:"Gerar Mï¿½sica",       icon:"??" },
 
   ]},
 
   { label: "Analisar", itens: [
 
-    { id:"analise",       label:"Análise de Perfil",  icon:"??" },
+    { id:"analise",       label:"Anï¿½lise de Perfil",  icon:"??" },
 
     { id:"score_viral",   label:"Score Viral",        icon:"?" },
 
@@ -682,35 +682,35 @@ const CONTA = [
 
   { id:"projetos",  label:"Meus Projetos",  icon:"??" },
 
-  { id:"creditos",  label:"Créditos",       icon:"??" },
+  { id:"creditos",  label:"Crï¿½ditos",       icon:"??" },
 
-  { id:"config",    label:"Configurações",  icon:"??" },
+  { id:"config",    label:"Configuraï¿½ï¿½es",  icon:"??" },
 
 ];
 
-const BOTTOM_NAV = [{ id:"chat",label:"Chat",icon:"?" },{ id:"roteiro",label:"Roteiro",icon:"??" },{ id:"tendencias",label:"Trends",icon:"??" },{ id:"score_viral",label:"Score",icon:"?" },{ id:"analise",label:"Análise",icon:"??" }];
+const BOTTOM_NAV = [{ id:"chat",label:"Chat",icon:"?" },{ id:"roteiro",label:"Roteiro",icon:"??" },{ id:"tendencias",label:"Trends",icon:"??" },{ id:"score_viral",label:"Score",icon:"?" },{ id:"analise",label:"Anï¿½lise",icon:"??" }];
 
 const PAGE_META = {
 
   chat:{title:"Vortex Chat",sub:"IA conversacional"},dashboard:{title:"Dashboard",sub:"Painel principal"},
 
-  analise:{title:"Análise de Perfil",sub:"Redes sociais"},
+  analise:{title:"Anï¿½lise de Perfil",sub:"Redes sociais"},
 
-  analisar_video:{title:"Análise de Vídeo",sub:"Score e diagnóstico"},
+  analisar_video:{title:"Anï¿½lise de Vï¿½deo",sub:"Score e diagnï¿½stico"},
 
-  video_faceless:{title:"Vídeo Faceless",sub:"1 clique — automático"},roteiro:{title:"Gerar Roteiro",sub:"Roteiros & Hooks"},
+  video_faceless:{title:"Vï¿½deo Faceless",sub:"1 clique ï¿½ automï¿½tico"},roteiro:{title:"Gerar Roteiro",sub:"Roteiros & Hooks"},
 
-  tendencias:{title:"Tendências Virais",sub:"2026"},imagens:{title:"Gerador de Imagens",sub:"IA Generativa"},
+  tendencias:{title:"Tendï¿½ncias Virais",sub:"2026"},imagens:{title:"Gerador de Imagens",sub:"IA Generativa"},
 
-  videos:{title:"Gerador de Vídeos",sub:"WaveSpeed AI"},voz:{title:"Clonagem de Voz",sub:"ElevenLabs"},
+  videos:{title:"Gerador de Vï¿½deos",sub:"WaveSpeed AI"},voz:{title:"Clonagem de Voz",sub:"ElevenLabs"},
 
   
 
-  memoria:{title:"Memória do Vortex",sub:"Preferências"},personagens:{title:"Meus Personagens",sub:"Biblioteca"},
+  memoria:{title:"Memï¿½ria do Vortex",sub:"Preferï¿½ncias"},personagens:{title:"Meus Personagens",sub:"Biblioteca"},
 
-  projetos:{title:"Meus Projetos",sub:"Histórico"},creditos:{title:"Comprar Créditos",sub:"Planos"},
+  projetos:{title:"Meus Projetos",sub:"Histï¿½rico"},creditos:{title:"Comprar Crï¿½ditos",sub:"Planos"},
 
-  config:{title:"Configurações",sub:"Sistema"},
+  config:{title:"Configuraï¿½ï¿½es",sub:"Sistema"},
 
 };
 
@@ -718,7 +718,7 @@ const PAGE_META = {
 
 // ==============================
 
-const QC_NICHOS = ["Terror","Gaming","Humor","Lifestyle","Educacional","Fitness","Tecnologia","Culinária"];
+const QC_NICHOS = ["Terror","Gaming","Humor","Lifestyle","Educacional","Fitness","Tecnologia","Culinï¿½ria"];
 
 const QC_FORMATOS = [
 
@@ -726,7 +726,7 @@ const QC_FORMATOS = [
 
   { id:"roteiro-medio",label:"Roteiro 2-5min",emoji:"??" },{ id:"legenda",label:"Legenda + Hashtags",emoji:"??" },
 
-  { id:"serie",label:"Série de 3 vídeos",emoji:"??" },
+  { id:"serie",label:"Sï¿½rie de 3 vï¿½deos",emoji:"??" },
 
 ];
 
@@ -764,19 +764,19 @@ function QuickCreate({ onSend }) {
 
       const map={
 
-        hooks:`Crie 5 hooks virais para ${nicho}${tema?` sobre "${tema}"`:""}.Para cada: texto (máx 7 palavras), emoção ativada, por que funciona.`,
+        hooks:`Crie 5 hooks virais para ${nicho}${tema?` sobre "${tema}"`:""}.Para cada: texto (mï¿½x 7 palavras), emoï¿½ï¿½o ativada, por que funciona.`,
 
         "roteiro-curto":`Crie roteiro 30-60s para ${nicho}${tema?` sobre "${tema}"`:""}.Hook(3s), desenvolvimento, CTA.`,
 
         "roteiro-medio":`Crie roteiro 2-5min para ${nicho}${tema?` sobre "${tema}"`:""}.Hook, blocos numerados, CTA.`,
 
-        legenda:`Crie legenda viral para ${nicho}${tema?` sobre "${tema}"`:""}.1ª linha impactante, corpo, CTA, 15 hashtags.`,
+        legenda:`Crie legenda viral para ${nicho}${tema?` sobre "${tema}"`:""}.1ï¿½ linha impactante, corpo, CTA, 15 hashtags.`,
 
-        serie:`Crie série 3 vídeos para ${nicho}${tema?` sobre "${tema}"`:""}.Cada um: título, hook, estrutura.`,
+        serie:`Crie sï¿½rie 3 vï¿½deos para ${nicho}${tema?` sobre "${tema}"`:""}.Cada um: tï¿½tulo, hook, estrutura.`,
 
       };
 
-      setResult(await callClaude("Você é o Vortex, especialista em conteúdo viral. Responda em português com markdown.",map[fmt]));
+      setResult(await callClaude("Vocï¿½ ï¿½ o Vortex, especialista em conteï¿½do viral. Responda em portuguï¿½s com markdown.",map[fmt]));
 
       setStep(4);
 
@@ -848,7 +848,7 @@ function QuickCreate({ onSend }) {
 
     <>
 
-      <button className="chat-action-btn" onClick={()=>setOpen(true)} title="Criação Rápida">
+      <button className="chat-action-btn" onClick={()=>setOpen(true)} title="Criaï¿½ï¿½o Rï¿½pida">
 
         <span style={{fontSize:16}}>?</span><span>Criar</span>
 
@@ -862,7 +862,7 @@ function QuickCreate({ onSend }) {
 
             <div style={mo.hd}>
 
-              <span style={mo.hdT}>? Criação Rápida</span>
+              <span style={mo.hdT}>? Criaï¿½ï¿½o Rï¿½pida</span>
 
               <div style={mo.prog}>{[0,1,2].map(i=><div key={i} style={mo.dot(step===i?"cur":step>i?"done":"")}/>)}</div>
 
@@ -870,13 +870,13 @@ function QuickCreate({ onSend }) {
 
             </div>
 
-            {step===0&&<div style={mo.body}><span style={mo.lbl}>Qual é o seu nicho?</span><div style={mo.chips}>{QC_NICHOS.map(n=><button key={n} style={mo.chip(nicho===n)} onClick={()=>setNicho(n)}>{n}</button>)}</div><button style={mo.btn} onClick={()=>setStep(1)} disabled={!nicho}>Continuar ?</button></div>}
+            {step===0&&<div style={mo.body}><span style={mo.lbl}>Qual ï¿½ o seu nicho?</span><div style={mo.chips}>{QC_NICHOS.map(n=><button key={n} style={mo.chip(nicho===n)} onClick={()=>setNicho(n)}>{n}</button>)}</div><button style={mo.btn} onClick={()=>setStep(1)} disabled={!nicho}>Continuar ?</button></div>}
 
             {step===1&&<div style={mo.body}><span style={mo.lbl}>O que criar?</span><div style={mo.fmts}>{QC_FORMATOS.map(f=><button key={f.id} style={mo.fBtn(fmt===f.id)} onClick={()=>setFmt(f.id)}><span style={{fontSize:15}}>{f.emoji}</span><span style={mo.fLbl(fmt===f.id)}>{f.label}</span></button>)}</div><div style={{display:"flex",gap:8}}><button style={mo.ghost} onClick={()=>setStep(0)}>? Voltar</button><button style={{...mo.btn,flex:1}} onClick={()=>setStep(2)} disabled={!fmt}>Continuar ?</button></div></div>}
 
             {step===2&&<div style={mo.body}><span style={mo.lbl}>Tema <span style={{color:"#524d72",fontWeight:400}}>(opcional)</span></span><textarea style={mo.ta} placeholder="Ex: caso real de terror..." value={tema} rows={3} onChange={e=>setTema(e.target.value)}/>{erro&&<div style={mo.err}>? {erro}</div>}<div style={mo.tags}><span style={mo.tag}>{nicho}</span><span style={mo.tag}>{fmtObj?.label}</span></div><div style={{display:"flex",gap:8}}><button style={mo.ghost} onClick={()=>setStep(1)}>? Voltar</button><button style={{...mo.btn,flex:1}} onClick={gerar}>? Gerar agora</button></div></div>}
 
-            {step===3&&<div style={{...mo.body,...mo.loading}}><div style={mo.spin}><div className="spinner" style={{width:40,height:40,border:"2px solid rgba(124,92,252,.2)",borderTopColor:"#7c5cfc",borderRadius:"50%",animation:"spin .65s linear infinite"}}/><span style={{fontSize:20,position:"absolute"}}>?</span></div><div style={{fontFamily:"'Syne',sans-serif",fontSize:14,fontWeight:700,color:"#f1eeff"}}>Gerando com IA...</div><div style={{fontSize:11,color:"#524d72"}}>{fmtObj?.label} · {nicho}</div></div>}
+            {step===3&&<div style={{...mo.body,...mo.loading}}><div style={mo.spin}><div className="spinner" style={{width:40,height:40,border:"2px solid rgba(124,92,252,.2)",borderTopColor:"#7c5cfc",borderRadius:"50%",animation:"spin .65s linear infinite"}}/><span style={{fontSize:20,position:"absolute"}}>?</span></div><div style={{fontFamily:"'Syne',sans-serif",fontSize:14,fontWeight:700,color:"#f1eeff"}}>Gerando com IA...</div><div style={{fontSize:11,color:"#524d72"}}>{fmtObj?.label} ï¿½ {nicho}</div></div>}
 
             {step===4&&<div style={mo.body}><div style={mo.resHd}><span style={{color:"#34d399",fontSize:13,fontWeight:600}}>? Pronto!</span><div style={{display:"flex",gap:6}}><button style={mo.act} onClick={()=>navigator.clipboard?.writeText(result)}>?? Copiar</button><button style={mo.act} onClick={()=>{setResult("");setErro("");setStep(2);}}>?? Novo</button></div></div><div style={mo.resTxt}>{result}</div><button style={mo.btn} onClick={()=>{onSend(result);close();}}>Abrir no Chat ?</button></div>}
 
@@ -906,7 +906,7 @@ function saveSessions(s) { try { localStorage.setItem(STORAGE_KEY,JSON.stringify
 
 function newId() { return Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
 
-function sessionTitle(msgs) { const u=msgs.find(m=>m.role==="user"); if(!u) return "Nova conversa"; return u.text.slice(0,44)+(u.text.length>44?"…":""); }
+function sessionTitle(msgs) { const u=msgs.find(m=>m.role==="user"); if(!u) return "Nova conversa"; return u.text.slice(0,44)+(u.text.length>44?"ï¿½":""); }
 
 function relDate(ts) { const d=(Date.now()-ts)/1000; if(d<60) return "agora"; if(d<3600) return `${Math.floor(d/60)}min`; if(d<86400) return `${Math.floor(d/3600)}h`; if(d<172800) return "ontem"; return new Date(ts).toLocaleDateString("pt-BR",{day:"2-digit",month:"short"}); }
 
@@ -948,7 +948,7 @@ function HistoryPanel({ sessions, activeId, onLoad, onNew, onDelete }) {
 
       <div style={HS.hd}>
 
-        <span style={HS.lbl}>Histórico</span>
+        <span style={HS.lbl}>Histï¿½rico</span>
 
         <button style={HS.newBtn} onClick={onNew}>+</button>
 
@@ -966,7 +966,7 @@ function HistoryPanel({ sessions, activeId, onLoad, onNew, onDelete }) {
 
               <span style={HS.ttl(s.id===activeId)}>{s.title}</span>
 
-              <span style={HS.meta}>{s.msgs} msgs · {s.date}</span>
+              <span style={HS.meta}>{s.msgs} msgs ï¿½ {s.date}</span>
 
             </div>
 
@@ -988,9 +988,9 @@ function HistoryPanel({ sessions, activeId, onLoad, onNew, onDelete }) {
 
 // ==============================
 
-const INITIAL_MSGS = [{ role:"assistant", text:"Olá! Sou o **Vortex**, sua IA para criação de conteúdo viral. ??\n\nPosso te ajudar a criar roteiros, analisar perfis, encontrar tendências e muito mais.\n\nComo posso te ajudar hoje?" }];
+const INITIAL_MSGS = [{ role:"assistant", text:"Olï¿½! Sou o **Vortex**, sua IA para criaï¿½ï¿½o de conteï¿½do viral. ??\n\nPosso te ajudar a criar roteiros, analisar perfis, encontrar tendï¿½ncias e muito mais.\n\nComo posso te ajudar hoje?" }];
 
-const SUGESTOES = ["Crie um roteiro viral para TikTok sobre terror","Quais são as tendências de 2026?","Me dê 5 hooks poderosos para Reels","Analise meu nicho de gaming"];
+const SUGESTOES = ["Crie um roteiro viral para TikTok sobre terror","Quais sï¿½o as tendï¿½ncias de 2026?","Me dï¿½ 5 hooks poderosos para Reels","Analise meu nicho de gaming"];
 
 
 
@@ -1008,13 +1008,13 @@ function detectIntent(text) {
 
 
 
-  // Detectar quando usuário quer texto, não geração
+  // Detectar quando usuï¿½rio quer texto, nï¿½o geraï¿½ï¿½o
 
-  const pedindoTexto = /prompt|me d[aá] o|escreve o|qual seria|me explica|como funciona|o que e|exemplo de|do roteiro|desse roteiro/.test(t);
+  const pedindoTexto = /prompt|me d[aï¿½] o|escreve o|qual seria|me explica|como funciona|o que e|exemplo de|do roteiro|desse roteiro/.test(t);
 
 
 
-  // -- IMAGEM — só geração explícita ------------------------------
+  // -- IMAGEM ï¿½ sï¿½ geraï¿½ï¿½o explï¿½cita ------------------------------
 
   const geraImagem = /^(gera|cria|faz|make|gerar|criar)\s+(uma?\s+)?(imagem|foto|thumbnail|capa|arte|ilustra|desenho)/i.test(t) ||
 
@@ -1024,9 +1024,9 @@ function detectIntent(text) {
 
 
 
-  // -- VÍDEO + VOZ — combina os dois ------------------------------
+  // -- Vï¿½DEO + VOZ ï¿½ combina os dois ------------------------------
 
-  const temVideo = /(vídeo|video|clipe|clip|reels?|short|animação)/.test(t);
+  const temVideo = /(vï¿½deo|video|clipe|clip|reels?|short|animaï¿½ï¿½o)/.test(t);
 
   const temVoz   = /(fala|narr|voz|voice|dizendo|falando|personagem|dubla)/.test(t);
 
@@ -1034,21 +1034,21 @@ function detectIntent(text) {
 
 
 
-  // -- VÍDEO simples -----------------------------------------------
+  // -- Vï¿½DEO simples -----------------------------------------------
 
-  const geraVideo = /^(gera|cria|faz|gerar|criar)\s+(um?\s+)?(vídeo|video|clipe|reel|short)/i.test(t) ||
+  const geraVideo = /^(gera|cria|faz|gerar|criar)\s+(um?\s+)?(vï¿½deo|video|clipe|reel|short)/i.test(t) ||
 
-                    /(gera|cria)\s+.*?(vídeo|video)/i.test(t);
+                    /(gera|cria)\s+.*?(vï¿½deo|video)/i.test(t);
 
   if(geraVideo && !pedindoTexto) return "video";
 
 
 
-  // -- VOZ/ÁUDIO — narração explícita -----------------------------
+  // -- VOZ/ï¿½UDIO ï¿½ narraï¿½ï¿½o explï¿½cita -----------------------------
 
-  const geraVoz = /^(narra|narrar|lê|leia|fala|dubla)\s+/i.test(t) ||
+  const geraVoz = /^(narra|narrar|lï¿½|leia|fala|dubla)\s+/i.test(t) ||
 
-                  /(narr(a|ar|ação)|dubla(gem|r)|leitura em voz|gera (o )?áudio|tts|text.to.speech)/.test(t);
+                  /(narr(a|ar|aï¿½ï¿½o)|dubla(gem|r)|leitura em voz|gera (o )?ï¿½udio|tts|text.to.speech)/.test(t);
 
   if(geraVoz && !pedindoTexto) return "voice";
 
@@ -1064,13 +1064,13 @@ function detectIntent(text) {
 
 function extractTextToNarrate(userRequest, history) {
 
-  // Se o usuário pediu pra narrar algo da conversa anterior
+  // Se o usuï¿½rio pediu pra narrar algo da conversa anterior
 
-  const ref = /(narra|lê|leia|fala|dubla|voice).*(isso|esse|esse roteiro|esse texto|o roteiro|acima|anterior)/i;
+  const ref = /(narra|lï¿½|leia|fala|dubla|voice).*(isso|esse|esse roteiro|esse texto|o roteiro|acima|anterior)/i;
 
   if (ref.test(userRequest)) {
 
-    // Pega o último texto do assistente
+    // Pega o ï¿½ltimo texto do assistente
 
     const last = [...history].reverse().find(m => m.role === "assistant");
 
@@ -1078,7 +1078,7 @@ function extractTextToNarrate(userRequest, history) {
 
   }
 
-  // Remove o comando e deixa só o texto
+  // Remove o comando e deixa sï¿½ o texto
 
   return userRequest
 
@@ -1090,19 +1090,19 @@ function extractTextToNarrate(userRequest, history) {
 
 
 
-// Detecta configurações de voz do pedido
+// Detecta configuraï¿½ï¿½es de voz do pedido
 
 function extractVoiceConfig(userRequest) {
 
   const t = userRequest.toLowerCase();
 
-  const config = { voice_id: "pNInz6obpgDQGcFmaJgB", stability: 0.5, similarity: 0.75 }; // padrão Adam
+  const config = { voice_id: "pNInz6obpgDQGcFmaJgB", stability: 0.5, similarity: 0.75 }; // padrï¿½o Adam
 
   if (/(feminina|mulher|female|garota)/.test(t))  config.voice_id = "EXAVITQu4vr4xnSDxMaL"; // Sarah
 
   if (/(grave|masculina|homem|male|deep)/.test(t)) config.voice_id = "pNInz6obpgDQGcFmaJgB"; // Adam
 
-  if (/(animado|energético|hype|animada)/.test(t)) { config.stability = 0.3; config.similarity = 0.8; }
+  if (/(animado|energï¿½tico|hype|animada)/.test(t)) { config.stability = 0.3; config.similarity = 0.8; }
 
   if (/(calmo|suave|devagar|pausado)/.test(t))     { config.stability = 0.8; config.similarity = 0.6; }
 
@@ -1158,11 +1158,11 @@ function buildChatSystem(profile, memory, history, modo) {
 
   const link     = profile.link || "";
 
-  const idioma   = profile.idioma || "Português";
+  const idioma   = profile.idioma || "Portuguï¿½s";
 
 
 
-  // Memória do usuário — estilo, evitar, CTA, referências
+  // Memï¿½ria do usuï¿½rio ï¿½ estilo, evitar, CTA, referï¿½ncias
 
   const estiloEscrita   = memory.estilo_escrita    || "";
 
@@ -1178,7 +1178,7 @@ function buildChatSystem(profile, memory, history, modo) {
 
 
 
-  // Histórico recente para contexto
+  // Histï¿½rico recente para contexto
 
   const recentMsgs = history.slice(-8)
 
@@ -1192,51 +1192,51 @@ function buildChatSystem(profile, memory, history, modo) {
 
 
 
-  // -- MODO ASSISTENTE — IA geral, completa, sem restrição de tema --
+  // -- MODO ASSISTENTE ï¿½ IA geral, completa, sem restriï¿½ï¿½o de tema --
 
   if(modo === "assistente") {
 
     const lines = [
 
-      "Você é o VORTEX AI — inteligência artificial completa, equivalente ao Claude, Gemini e ChatGPT.",
+      "Vocï¿½ ï¿½ o VORTEX AI ï¿½ inteligï¿½ncia artificial completa, equivalente ao Claude, Gemini e ChatGPT.",
 
       "",
 
       "CAPACIDADES TOTAIS:",
 
-      "Responda qualquer pergunta de qualquer área: tecnologia, ciência, história, filosofia, negócios,",
+      "Responda qualquer pergunta de qualquer ï¿½rea: tecnologia, ciï¿½ncia, histï¿½ria, filosofia, negï¿½cios,",
 
-      "medicina, direito, matemática, programação, criatividade, produtividade, idiomas e muito mais.",
+      "medicina, direito, matemï¿½tica, programaï¿½ï¿½o, criatividade, produtividade, idiomas e muito mais.",
 
       "",
 
       "PERSONALIDADE:",
 
-      "- Direto e inteligente — sem enrolação, sem robótica",
+      "- Direto e inteligente ï¿½ sem enrolaï¿½ï¿½o, sem robï¿½tica",
 
-      "- Honesto — se não souber, diz claramente em vez de inventar",
+      "- Honesto ï¿½ se nï¿½o souber, diz claramente em vez de inventar",
 
-      "- Tom adaptável — técnico quando necessário, descontraído quando o usuário quer",
+      "- Tom adaptï¿½vel ï¿½ tï¿½cnico quando necessï¿½rio, descontraï¿½do quando o usuï¿½rio quer",
 
-      "- Contextual — mantém coerência com o que foi dito na conversa",
+      "- Contextual ï¿½ mantï¿½m coerï¿½ncia com o que foi dito na conversa",
 
       "",
 
-      "REGRAS CRÍTICAS:",
+      "REGRAS CRï¿½TICAS:",
 
-      "- NUNCA invente dados, estatísticas ou fatos",
+      "- NUNCA invente dados, estatï¿½sticas ou fatos",
 
-      "- NUNCA diga que é Claude, Gemini, GPT — você é o VORTEX",
+      "- NUNCA diga que ï¿½ Claude, Gemini, GPT ï¿½ vocï¿½ ï¿½ o VORTEX",
 
-      "- Quando perguntarem sobre VOCÊ (suas capacidades) ? responda sobre VOCÊ",
+      "- Quando perguntarem sobre VOCï¿½ (suas capacidades) ? responda sobre VOCï¿½",
 
       "- Responda SEMPRE em " + idioma,
 
     ];
 
-    if(nome) lines.push("- Usuário: " + nome);
+    if(nome) lines.push("- Usuï¿½rio: " + nome);
 
-    if(nicho) lines.push("- Contexto do usuário: criador de conteúdo de " + nicho);
+    if(nicho) lines.push("- Contexto do usuï¿½rio: criador de conteï¿½do de " + nicho);
 
     if(recentMsgs) lines.push("- Contexto da conversa: " + recentMsgs);
 
@@ -1248,13 +1248,13 @@ function buildChatSystem(profile, memory, history, modo) {
 
 
 
-  // -- MODO CRIADOR — especialista em conteúdo viral --------------
+  // -- MODO CRIADOR ï¿½ especialista em conteï¿½do viral --------------
 
   const lines = [
 
-    "Você é o VORTEX AI — o assistente de criação de conteúdo viral mais inteligente do Brasil.",
+    "Vocï¿½ ï¿½ o VORTEX AI ï¿½ o assistente de criaï¿½ï¿½o de conteï¿½do viral mais inteligente do Brasil.",
 
-    "Você entende algoritmos, tendências, psicologia do scroll e o mercado brasileiro profundamente.",
+    "Vocï¿½ entende algoritmos, tendï¿½ncias, psicologia do scroll e o mercado brasileiro profundamente.",
 
     "",
 
@@ -1276,7 +1276,7 @@ function buildChatSystem(profile, memory, history, modo) {
 
     if(tom)    lines.push("- Tom de voz: " + tom);
 
-    if(publicoAlvo) lines.push("- Público-alvo: " + publicoAlvo);
+    if(publicoAlvo) lines.push("- Pï¿½blico-alvo: " + publicoAlvo);
 
     if(link)   lines.push("- Perfil: " + link);
 
@@ -1286,7 +1286,7 @@ function buildChatSystem(profile, memory, history, modo) {
 
 
 
-  // Memória personalizada
+  // Memï¿½ria personalizada
 
   const memoriaItems = [
 
@@ -1298,7 +1298,7 @@ function buildChatSystem(profile, memory, history, modo) {
 
     ctaFavorito     && "- CTA favorito: " + ctaFavorito,
 
-    referencias     && "- Referências/inspirações: " + referencias,
+    referencias     && "- Referï¿½ncias/inspiraï¿½ï¿½es: " + referencias,
 
   ].filter(Boolean);
 
@@ -1306,7 +1306,7 @@ function buildChatSystem(profile, memory, history, modo) {
 
   if(memoriaItems.length > 0) {
 
-    lines.push("MEMÓRIA DO CRIADOR (use sempre):");
+    lines.push("MEMï¿½RIA DO CRIADOR (use sempre):");
 
     lines.push(...memoriaItems);
 
@@ -1322,13 +1322,13 @@ function buildChatSystem(profile, memory, history, modo) {
 
     "- Hooks virais que param o scroll em 2 segundos",
 
-    "- Tendências em tempo real por nicho e plataforma",
+    "- Tendï¿½ncias em tempo real por nicho e plataforma",
 
-    "- Estratégias de crescimento por algoritmo (TikTok, Reels, Shorts)",
+    "- Estratï¿½gias de crescimento por algoritmo (TikTok, Reels, Shorts)",
 
-    "- Copywriting que converte — gatilhos emocionais precisos",
+    "- Copywriting que converte ï¿½ gatilhos emocionais precisos",
 
-    "- Análise de métricas e diagnóstico de perfis",
+    "- Anï¿½lise de mï¿½tricas e diagnï¿½stico de perfis",
 
     "",
 
@@ -1336,13 +1336,13 @@ function buildChatSystem(profile, memory, history, modo) {
 
     "- Personalize TUDO ao perfil do criador acima",
 
-    "- Responda em " + idioma + " natural — sem robótica",
+    "- Responda em " + idioma + " natural ï¿½ sem robï¿½tica",
 
-    "- NUNCA começa com 'Certamente!', 'Claro!', 'Ótima pergunta!'",
+    "- NUNCA comeï¿½a com 'Certamente!', 'Claro!', 'ï¿½tima pergunta!'",
 
     "- Para roteiro completo ? manda para a aba Roteiro",
 
-    "- NUNCA diga que é Claude, Gemini, GPT — você é o VORTEX",
+    "- NUNCA diga que ï¿½ Claude, Gemini, GPT ï¿½ vocï¿½ ï¿½ o VORTEX",
 
   );
 
@@ -1424,11 +1424,11 @@ async function vortexRouter(userText, profile, memory, history, historicoBackend
 
 
 
-  // Chat — monta histórico e system prompt sem template literals complexos
+  // Chat ï¿½ monta histï¿½rico e system prompt sem template literals complexos
 
   const personagemCtx = personagem
 
-    ? "\n\nPERSONAGEM ATIVO: " + personagem.nome + " — " + (personagem.personalidade||"") + " — voz: " + personagem.voice_nome
+    ? "\n\nPERSONAGEM ATIVO: " + personagem.nome + " ï¿½ " + (personagem.personalidade||"") + " ï¿½ voz: " + personagem.voice_nome
 
     : "";
 
@@ -1438,7 +1438,7 @@ async function vortexRouter(userText, profile, memory, history, historicoBackend
 
 
 
-  // Envia só a mensagem atual — histórico vai separado
+  // Envia sï¿½ a mensagem atual ï¿½ histï¿½rico vai separado
 
   const response = await callClaude(system, userText, historicoBackend || []);
 
@@ -1456,7 +1456,7 @@ async function generateImage(prompt, modelo="pollinations", modeloObj=null) {
 
   
 
-  // Se for modelo AIML — usa endpoint dedicado
+  // Se for modelo AIML ï¿½ usa endpoint dedicado
 
   if(modeloObj?.aiml || modelo.startsWith("aiml_")) {
 
@@ -1488,7 +1488,7 @@ async function generateImage(prompt, modelo="pollinations", modeloObj=null) {
 
   
 
-  // Modelo padrão — endpoint free
+  // Modelo padrï¿½o ï¿½ endpoint free
 
   try {
 
@@ -1500,7 +1500,7 @@ async function generateImage(prompt, modelo="pollinations", modeloObj=null) {
 
     });
 
-  } catch { throw new Error("?? Backend offline — inicie o servidor Python"); }
+  } catch { throw new Error("?? Backend offline ï¿½ inicie o servidor Python"); }
 
   if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e?.detail||`HTTP ${res.status}`);}
 
@@ -1556,7 +1556,7 @@ async function generateVideo(prompt, duracao=5) {
 
     });
 
-  } catch { throw new Error("?? Backend offline — inicie o servidor Python"); }
+  } catch { throw new Error("?? Backend offline ï¿½ inicie o servidor Python"); }
 
   if (!res.ok) { const e = await res.json().catch(()=>({})); throw new Error(e?.detail || `HTTP ${res.status}`); }
 
@@ -1586,7 +1586,7 @@ async function generateVoice(text, config={}) {
 
     });
 
-  } catch { throw new Error("?? Backend offline — inicie o servidor Python"); }
+  } catch { throw new Error("?? Backend offline ï¿½ inicie o servidor Python"); }
 
   if (!res.ok) { const e = await res.json().catch(()=>({})); throw new Error(e?.detail || `HTTP ${res.status}`); }
 
@@ -1606,11 +1606,11 @@ async function generateVoice(text, config={}) {
 
 const VOZES_PRONTAS = [
 
-  { id:"pNInz6obpgDQGcFmaJgB", nome:"Adam",    desc:"Masculina grave, narração",  emoji:"???" },
+  { id:"pNInz6obpgDQGcFmaJgB", nome:"Adam",    desc:"Masculina grave, narraï¿½ï¿½o",  emoji:"???" },
 
   { id:"EXAVITQu4vr4xnSDxMaL", nome:"Sarah",   desc:"Feminina suave, conversa",   emoji:"??" },
 
-  { id:"TX3LPaxmHKxFdv7VOQHJ", nome:"Liam",    desc:"Masculina jovem, energético", emoji:"?" },
+  { id:"TX3LPaxmHKxFdv7VOQHJ", nome:"Liam",    desc:"Masculina jovem, energï¿½tico", emoji:"?" },
 
   { id:"XB0fDUnXU5powFXDhCwa", nome:"Charlotte",desc:"Feminina forte, impactante", emoji:"??" },
 
@@ -1648,7 +1648,7 @@ function setPersonagemAtivo(p) {
 
 
 
-// Monta o prompt de imagem/vídeo com consistência de personagem
+// Monta o prompt de imagem/vï¿½deo com consistï¿½ncia de personagem
 
 function buildPersonagemPrompt(basePrompt, personagem, mudancas={}) {
 
@@ -1694,7 +1694,7 @@ function buildPersonagemPrompt(basePrompt, personagem, mudancas={}) {
 
 
 
-// Detecta mudanças pedidas pelo usuário em novo vídeo
+// Detecta mudanï¿½as pedidas pelo usuï¿½rio em novo vï¿½deo
 
 function extractMudancas(userText) {
 
@@ -1702,7 +1702,7 @@ function extractMudancas(userText) {
 
   const mudancas = {};
 
-  if (t.includes("cenario") || t.includes("cenário")) {
+  if (t.includes("cenario") || t.includes("cenï¿½rio")) {
 
     const m = t.match(/cen.rio\s+(?:de\s+)?([^,.]+)/);
 
@@ -1726,7 +1726,7 @@ function extractMudancas(userText) {
 
   }
 
-  const exprs = ["sorrindo","sério","triste","animado","com raiva","surpreso","feliz"];
+  const exprs = ["sorrindo","sï¿½rio","triste","animado","com raiva","surpreso","feliz"];
 
   const expr = exprs.find(e => t.includes(e));
 
@@ -1738,7 +1738,7 @@ function extractMudancas(userText) {
 
   if (t.includes("floresta")) mudancas.cenario = "forest, nature, trees";
 
-  if (t.includes("estúdio"))  mudancas.cenario = "studio, clean background";
+  if (t.includes("estï¿½dio"))  mudancas.cenario = "studio, clean background";
 
   if (t.includes("noite"))    mudancas.cenario = (mudancas.cenario||"") + " night time";
 
@@ -1748,7 +1748,7 @@ function extractMudancas(userText) {
 
 
 
-// Modal de criação/edição de personagem
+// Modal de criaï¿½ï¿½o/ediï¿½ï¿½o de personagem
 
 function ModalPersonagem({ personagem, onSave, onClose }) {
 
@@ -1798,7 +1798,7 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
         <div style={{display:"flex",gap:4,padding:"12px 16px 0",flexShrink:0}}>
 
-          {[["aparencia","?? Aparência"],["voz","??? Voz"],["padrao","?? Padrões"]].map(([t,l])=>(
+          {[["aparencia","?? Aparï¿½ncia"],["voz","??? Voz"],["padrao","?? Padrï¿½es"]].map(([t,l])=>(
 
             <button key={t} onClick={()=>setTab(t)}
 
@@ -1832,15 +1832,15 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
               <div className="field">
 
-                <label className="label">Descrição visual (aparência física)</label>
+                <label className="label">Descriï¿½ï¿½o visual (aparï¿½ncia fï¿½sica)</label>
 
                 <textarea className="input" rows={4}
 
-                  placeholder="Ex: homem jovem, 25 anos, cabelo preto curto, olhos castanhos, pele morena, expressão séria, estilo urbano..."
+                  placeholder="Ex: homem jovem, 25 anos, cabelo preto curto, olhos castanhos, pele morena, expressï¿½o sï¿½ria, estilo urbano..."
 
                   value={dados.aparencia} onChange={e=>set("aparencia",e.target.value)}/>
 
-                <div style={{fontSize:10,color:"var(--text3)",marginTop:4}}>Quanto mais detalhado, mais consistente o personagem vai ficar entre os vídeos</div>
+                <div style={{fontSize:10,color:"var(--text3)",marginTop:4}}>Quanto mais detalhado, mais consistente o personagem vai ficar entre os vï¿½deos</div>
 
               </div>
 
@@ -1850,7 +1850,7 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
                 <textarea className="input" rows={2}
 
-                  placeholder="Ex: engraçado, direto, gírias cariocas, sempre animado..."
+                  placeholder="Ex: engraï¿½ado, direto, gï¿½rias cariocas, sempre animado..."
 
                   value={dados.personalidade} onChange={e=>set("personalidade",e.target.value)}/>
 
@@ -1896,11 +1896,11 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
                 <div style={{fontSize:12,fontWeight:600,color:"var(--purple2)",marginBottom:4}}>?? Clonar sua voz (ElevenLabs)</div>
 
-                <div style={{fontSize:11,color:"var(--text3)",marginBottom:8}}>Grave 30 segundos da sua voz ou do personagem. O Vortex clona e usa sempre que gerar conteúdo.</div>
+                <div style={{fontSize:11,color:"var(--text3)",marginBottom:8}}>Grave 30 segundos da sua voz ou do personagem. O Vortex clona e usa sempre que gerar conteï¿½do.</div>
 
                 <button className="btn btn-sm btn-ghost" onClick={()=>alert("Integre com ElevenLabs Voice Cloning API")}>
 
-                  ??? Fazer upload de áudio para clonar
+                  ??? Fazer upload de ï¿½udio para clonar
 
                 </button>
 
@@ -1908,7 +1908,7 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
               <div className="field" style={{marginTop:12}}>
 
-                <label className="label">Tom de fala / instruções</label>
+                <label className="label">Tom de fala / instruï¿½ï¿½es</label>
 
                 <input className="input" placeholder="Ex: fala devagar, sempre com humor, sotaque carioca..."
 
@@ -1928,9 +1928,9 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
               <div className="field">
 
-                <label className="label">Cenário padrão</label>
+                <label className="label">Cenï¿½rio padrï¿½o</label>
 
-                <input className="input" placeholder="Ex: estúdio moderno, fundo preto com neon roxo..."
+                <input className="input" placeholder="Ex: estï¿½dio moderno, fundo preto com neon roxo..."
 
                   value={dados.cenario_padrao} onChange={e=>set("cenario_padrao",e.target.value)}/>
 
@@ -1938,9 +1938,9 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
               <div className="field">
 
-                <label className="label">Roupa padrão</label>
+                <label className="label">Roupa padrï¿½o</label>
 
-                <input className="input" placeholder="Ex: camiseta preta, boné, corrente dourada..."
+                <input className="input" placeholder="Ex: camiseta preta, bonï¿½, corrente dourada..."
 
                   value={dados.roupa_padrao} onChange={e=>set("roupa_padrao",e.target.value)}/>
 
@@ -1948,11 +1948,11 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
               <div className="field">
 
-                <label className="label">Expressão padrão</label>
+                <label className="label">Expressï¿½o padrï¿½o</label>
 
                 <div className="chips">
 
-                  {["neutro","sorrindo","sério","animado","confiante"].map(ex=>(
+                  {["neutro","sorrindo","sï¿½rio","animado","confiante"].map(ex=>(
 
                     <button key={ex} className={`chip ${dados.expressao_padrao===ex?"active":""}`}
 
@@ -1966,9 +1966,9 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
               <div className="field">
 
-                <label className="label">Pose padrão</label>
+                <label className="label">Pose padrï¿½o</label>
 
-                <input className="input" placeholder="Ex: de frente, olhando para câmera, braços cruzados..."
+                <input className="input" placeholder="Ex: de frente, olhando para cï¿½mera, braï¿½os cruzados..."
 
                   value={dados.pose_padrao} onChange={e=>set("pose_padrao",e.target.value)}/>
 
@@ -1990,7 +1990,7 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
           <button className="btn" style={{flex:2}} onClick={()=>onSave({...dados,id:dados.id||Date.now().toString(36)})}>
 
-            ?? {personagem?"Salvar alterações":"Criar personagem"}
+            ?? {personagem?"Salvar alteraï¿½ï¿½es":"Criar personagem"}
 
           </button>
 
@@ -2006,7 +2006,7 @@ function ModalPersonagem({ personagem, onSave, onClose }) {
 
 
 
-// Componente da página de personagens
+// Componente da pï¿½gina de personagens
 
 function MeusPersonagens() {
 
@@ -2066,7 +2066,7 @@ function MeusPersonagens() {
 
         <h1 className="page-title">Meus <em>Personagens</em></h1>
 
-        <p className="page-sub">Crie personagens consistentes para seus vídeos e conteúdos.</p>
+        <p className="page-sub">Crie personagens consistentes para seus vï¿½deos e conteï¿½dos.</p>
 
       </div>
 
@@ -2082,7 +2082,7 @@ function MeusPersonagens() {
 
             <div style={{fontSize:13,fontWeight:600,color:"var(--purple2)"}}>Personagem ativo: {ativo.nome}</div>
 
-            <div style={{fontSize:11,color:"var(--text3)"}}>Voz: {ativo.voice_nome} · Todos os vídeos usarão este personagem</div>
+            <div style={{fontSize:11,color:"var(--text3)"}}>Voz: {ativo.voice_nome} ï¿½ Todos os vï¿½deos usarï¿½o este personagem</div>
 
           </div>
 
@@ -2136,7 +2136,7 @@ function MeusPersonagens() {
 
               ??? {p.voice_nome} {p.voice_clonada?"(clonada)":""}
 
-              {p.cenario_padrao&&` · ?? ${p.cenario_padrao.slice(0,30)}`}
+              {p.cenario_padrao&&` ï¿½ ?? ${p.cenario_padrao.slice(0,30)}`}
 
             </div>
 
@@ -2176,13 +2176,13 @@ function MeusPersonagens() {
 
 const ESTILOS_EDICAO = [
 
-  { id:"viral_tiktok",   nome:"?? Viral TikTok",    desc:"Legendas palavra a palavra, cortes rápidos, zoom",     cor:"#f472b6" },
+  { id:"viral_tiktok",   nome:"?? Viral TikTok",    desc:"Legendas palavra a palavra, cortes rï¿½pidos, zoom",     cor:"#f472b6" },
 
-  { id:"cinematografico",nome:"?? Cinematográfico",  desc:"Cortes suaves, texto elegante, color grade escuro",    cor:"#a78bfa" },
+  { id:"cinematografico",nome:"?? Cinematogrï¿½fico",  desc:"Cortes suaves, texto elegante, color grade escuro",    cor:"#a78bfa" },
 
   { id:"educacional",    nome:"?? Educacional",      desc:"Legendas limpas, destaques em palavras-chave",         cor:"#22d3ee" },
 
-  { id:"terror",         nome:"?? Terror/Suspense",  desc:"Glitch, ruído, texto tremendo, cortes abruptos",       cor:"#ef4444" },
+  { id:"terror",         nome:"?? Terror/Suspense",  desc:"Glitch, ruï¿½do, texto tremendo, cortes abruptos",       cor:"#ef4444" },
 
   { id:"humor",          nome:"?? Humor/Meme",       desc:"Texto grande colorido, emojis animados",               cor:"#fbbf24" },
 
@@ -2208,11 +2208,11 @@ function getShotstackEnv() {
 
 
 
-// Transcrição via AssemblyAI (ou fallback mock para dev)
+// Transcriï¿½ï¿½o via AssemblyAI (ou fallback mock para dev)
 
 async function transcribeVideo(videoUrl) {
 
-  // Mock words — em produção o backend chama AssemblyAI
+  // Mock words ï¿½ em produï¿½ï¿½o o backend chama AssemblyAI
 
   try {
 
@@ -2236,19 +2236,19 @@ async function transcribeVideo(videoUrl) {
 
   } catch {}
 
-  // Fallback mock se backend não tiver endpoint de transcrição ainda
+  // Fallback mock se backend nï¿½o tiver endpoint de transcriï¿½ï¿½o ainda
 
   return [
 
-    { text:"Olá pessoal,",     start:0,    end:800  },
+    { text:"Olï¿½ pessoal,",     start:0,    end:800  },
 
     { text:"hoje vou mostrar", start:900,  end:1800 },
 
-    { text:"algo incrível",    start:1900, end:2700 },
+    { text:"algo incrï¿½vel",    start:1900, end:2700 },
 
     { text:"que vai mudar",    start:2800, end:3600 },
 
-    { text:"seu conteúdo!",    start:3700, end:4500 },
+    { text:"seu conteï¿½do!",    start:3700, end:4500 },
 
   ];
 
@@ -2340,7 +2340,7 @@ async function renderWithShotstack(timeline) {
 
   } catch {
 
-    throw new Error("Backend offline — inicie o servidor Python");
+    throw new Error("Backend offline ï¿½ inicie o servidor Python");
 
   }
 
@@ -2354,7 +2354,7 @@ async function renderWithShotstack(timeline) {
 
 
 
-// Componente de edição de vídeo
+// Componente de ediï¿½ï¿½o de vï¿½deo
 
 function VideoEditor({ onClose, onResult }) {
 
@@ -2396,7 +2396,7 @@ function VideoEditor({ onClose, onResult }) {
 
     try {
 
-      setProgMsg("?? Enviando vídeo para o servidor...");
+      setProgMsg("?? Enviando vï¿½deo para o servidor...");
 
       
 
@@ -2422,27 +2422,27 @@ function VideoEditor({ onClose, onResult }) {
 
       } catch {
 
-        throw new Error("Backend offline — inicie o servidor Python");
+        throw new Error("Backend offline ï¿½ inicie o servidor Python");
 
       }
 
       
 
-      if (!uploadRes.ok) throw new Error("Falha no upload do vídeo");
+      if (!uploadRes.ok) throw new Error("Falha no upload do vï¿½deo");
 
       const uploadData = await uploadRes.json();
 
-      const videoUrl = uploadData.url; // URL pública retornada pelo backend
+      const videoUrl = uploadData.url; // URL pï¿½blica retornada pelo backend
 
 
 
-      setProgMsg("?? Preparando edição...");
+      setProgMsg("?? Preparando ediï¿½ï¿½o...");
 
-      const words = []; // transcrição opcional
+      const words = []; // transcriï¿½ï¿½o opcional
 
 
 
-      setProgMsg("?? Montando timeline de edição...");
+      setProgMsg("?? Montando timeline de ediï¿½ï¿½o...");
 
       const duracao = uploadData.duracao || 30;
 
@@ -2484,7 +2484,7 @@ function VideoEditor({ onClose, onResult }) {
 
         <div style={{padding:"1.25rem 1.5rem",borderBottom:".5px solid var(--border)",display:"flex",alignItems:"center",justifyContent:"space-between",flexShrink:0}}>
 
-          <div style={{fontFamily:"var(--fh)",fontSize:16,fontWeight:800}}>?? Editar Vídeo</div>
+          <div style={{fontFamily:"var(--fh)",fontSize:16,fontWeight:800}}>?? Editar Vï¿½deo</div>
 
           <button onClick={onClose} style={{background:"transparent",border:"none",color:"var(--text3)",fontSize:16,cursor:"pointer"}}>?</button>
 
@@ -2514,9 +2514,9 @@ function VideoEditor({ onClose, onResult }) {
 
                 <div style={{fontSize:40,marginBottom:12}}>??</div>
 
-                <div style={{fontFamily:"var(--fh)",fontSize:14,fontWeight:700,color:"var(--text)",marginBottom:6}}>Arraste o vídeo aqui</div>
+                <div style={{fontFamily:"var(--fh)",fontSize:14,fontWeight:700,color:"var(--text)",marginBottom:6}}>Arraste o vï¿½deo aqui</div>
 
-                <div style={{fontSize:12,color:"var(--text3)"}}>ou clique para selecionar · MP4, MOV, AVI</div>
+                <div style={{fontSize:12,color:"var(--text3)"}}>ou clique para selecionar ï¿½ MP4, MOV, AVI</div>
 
               </div>
 
@@ -2538,7 +2538,7 @@ function VideoEditor({ onClose, onResult }) {
 
               <div className="field">
 
-                <label className="label">Escolha o estilo de edição</label>
+                <label className="label">Escolha o estilo de ediï¿½ï¿½o</label>
 
                 <div style={{display:"flex",flexDirection:"column",gap:6}}>
 
@@ -2570,7 +2570,7 @@ function VideoEditor({ onClose, onResult }) {
 
               <div style={{display:"flex",gap:8,marginTop:8}}>
 
-                <button className="btn btn-ghost" onClick={()=>{setStep(0);setFile(null);setFileUrl("");}}>? Trocar vídeo</button>
+                <button className="btn btn-ghost" onClick={()=>{setStep(0);setFile(null);setFileUrl("");}}>? Trocar vï¿½deo</button>
 
                 <button className="btn" style={{flex:1}} onClick={processar}>? Editar agora</button>
 
@@ -2598,7 +2598,7 @@ function VideoEditor({ onClose, onResult }) {
 
               <div style={{fontFamily:"var(--fh)",fontSize:15,fontWeight:700,color:"var(--text)"}}>{progMsg}</div>
 
-              <div style={{fontSize:11,color:"var(--text3)"}}>Pode levar até 3 minutos dependendo do vídeo</div>
+              <div style={{fontSize:11,color:"var(--text3)"}}>Pode levar atï¿½ 3 minutos dependendo do vï¿½deo</div>
 
               <div style={{width:"100%",height:4,background:"rgba(123,47,255,.1)",borderRadius:99,overflow:"hidden"}}>
 
@@ -2622,7 +2622,7 @@ function VideoEditor({ onClose, onResult }) {
 
               <div style={{background:"rgba(52,211,153,.08)",border:".5px solid rgba(52,211,153,.25)",borderRadius:12,padding:"10px 14px",marginBottom:14,fontSize:13,color:"var(--green)",fontWeight:600}}>
 
-                ? Vídeo editado com sucesso!
+                ? Vï¿½deo editado com sucesso!
 
               </div>
 
@@ -2632,7 +2632,7 @@ function VideoEditor({ onClose, onResult }) {
 
                 <a href={result} download="vortex-editado.mp4" className="btn" style={{flex:1,textDecoration:"none",display:"flex",alignItems:"center",justifyContent:"center"}}>
 
-                  ?? Baixar vídeo
+                  ?? Baixar vï¿½deo
 
                 </a>
 
@@ -2680,7 +2680,7 @@ function NarrarBtn({ texto }) {
 
     try {
 
-      // Limpa markdown para narração
+      // Limpa markdown para narraï¿½ï¿½o
 
       const textoLimpo = texto
 
@@ -2724,7 +2724,7 @@ function NarrarBtn({ texto }) {
 
       }
 
-      if (!res || !res.ok) throw new Error("ElevenLabs indisponível");
+      if (!res || !res.ok) throw new Error("ElevenLabs indisponï¿½vel");
 
       const d = await res.json();
 
@@ -2982,7 +2982,7 @@ function VortexChat() {
 
     try{
 
-      // Carrega perfil e memória do usuário
+      // Carrega perfil e memï¿½ria do usuï¿½rio
 
       const profile = loadUserProfile();
 
@@ -2990,9 +2990,9 @@ function VortexChat() {
 
 
 
-      // Prompt Engine — detecta intenção e enriquece o prompt
+      // Prompt Engine ï¿½ detecta intenï¿½ï¿½o e enriquece o prompt
 
-      // Envia histórico formatado para o backend
+      // Envia histï¿½rico formatado para o backend
 
       const historicoBackend = messages.slice(-10).map(m=>({
 
@@ -3008,7 +3008,7 @@ function VortexChat() {
 
 
 
-        // Roteiro — chama endpoint dedicado com Claude diretamente
+        // Roteiro ï¿½ chama endpoint dedicado com Claude diretamente
 
         const isRoteiro = /^(crie?|faz|gera?|monta?|escreve?)\s+(um\s+)?(roteiro|script)/i.test(t.trim()) || /^roteiro\s+de/i.test(t.trim());
 
@@ -3086,15 +3086,15 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
       } else if (routed.type === "video") {
 
-        // Gera vídeo
+        // Gera vï¿½deo
 
-        setMessages([...comUser, {role:"assistant", text:"?? Gerando vídeo com IA... (pode levar até 2 min)", loading:true}]);
+        setMessages([...comUser, {role:"assistant", text:"?? Gerando vï¿½deo com IA... (pode levar atï¿½ 2 min)", loading:true}]);
 
         try {
 
           const url = await generateVideo(routed.prompt);
 
-          finalMsgs = [...comUser, {role:"assistant", text:`?? **Vídeo gerado!**
+          finalMsgs = [...comUser, {role:"assistant", text:`?? **Vï¿½deo gerado!**
 
 
 
@@ -3106,7 +3106,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
         } catch(vidErr) {
 
-          finalMsgs = [...comUser, {role:"assistant", text:`?? Erro ao gerar vídeo: ${vidErr.message}`}];
+          finalMsgs = [...comUser, {role:"assistant", text:`?? Erro ao gerar vï¿½deo: ${vidErr.message}`}];
 
         }
 
@@ -3182,11 +3182,11 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
       if (e.message?.includes("401") || e.message?.includes("API Key")) {
 
-        msg = "?? **API Key inválida**\n\nVerifique se o arquivo `.env` tem:\n```\nVITE_GROQ_API_KEY=gsk_...\n```\nDepois reinicie com `npm run dev`";
+        msg = "?? **API Key invï¿½lida**\n\nVerifique se o arquivo `.env` tem:\n```\nVITE_GROQ_API_KEY=gsk_...\n```\nDepois reinicie com `npm run dev`";
 
       } else if (e.message?.includes("429") || e.message?.includes("rate") || e.message?.includes("503") || e.message?.includes("limit") || e.message?.includes("Limite")) {
 
-        // Retry silencioso — usuário não vê erro
+        // Retry silencioso ï¿½ usuï¿½rio nï¿½o vï¿½ erro
 
         const withWait=[...comUser,{role:"assistant",text:"? Pensando...",loading:true}];
 
@@ -3222,7 +3222,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
       } else if (e.message?.includes("fetch") || e.message?.includes("network") || e.message?.includes("CORS")) {
 
-        msg = "?? **Erro de conexão** — verifique sua internet. Se estiver com VPN, desative e tente novamente.";
+        msg = "?? **Erro de conexï¿½o** ï¿½ verifique sua internet. Se estiver com VPN, desative e tente novamente.";
 
       }
 
@@ -3234,7 +3234,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
 
 
-  const handleQuick=useCallback(texto=>{enviar(`Aqui está o conteúdo gerado:\n\n${texto}\n\nPode melhorar ou adaptar?`);},[enviar]);
+  const handleQuick=useCallback(texto=>{enviar(`Aqui estï¿½ o conteï¿½do gerado:\n\n${texto}\n\nPode melhorar ou adaptar?`);},[enviar]);
 
 
 
@@ -3250,7 +3250,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
         
 
-        {/* TOPBAR DO CHAT — seletor de modo + modelo atual */}
+        {/* TOPBAR DO CHAT ï¿½ seletor de modo + modelo atual */}
 
         <div style={{
 
@@ -3320,7 +3320,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
           
 
-          {/* Botão novo chat */}
+          {/* Botï¿½o novo chat */}
 
           <button onClick={newSession}
 
@@ -3340,7 +3340,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
         <div className="chat-messages">
 
-          {/* Empty state — aparece quando não tem mensagens */}
+          {/* Empty state ï¿½ aparece quando nï¿½o tem mensagens */}
 
           {messages.length===0&&(
 
@@ -3370,15 +3370,15 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
                   {window.__vortexModo==="assistente"
 
-                    ?"Sou o Vortex AI — respondo qualquer pergunta como Claude, GPT e Gemini."
+                    ?"Sou o Vortex AI ï¿½ respondo qualquer pergunta como Claude, GPT e Gemini."
 
-                    :"Roteiros, estratégias, hooks, tendências — tudo em um lugar."}
+                    :"Roteiros, estratï¿½gias, hooks, tendï¿½ncias ï¿½ tudo em um lugar."}
 
                 </div>
 
               </div>
 
-              {/* Sugestões rápidas no empty state */}
+              {/* Sugestï¿½es rï¿½pidas no empty state */}
 
               <div style={{display:"flex",flexDirection:"column",gap:6,width:"100%",maxWidth:320}}>
 
@@ -3420,7 +3420,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
               <div>
 
-                {m.role==="assistant"&&<div className="msg-name">Vortex AI {m.modelo?<span style={{fontSize:9,color:"rgba(123,47,255,.6)",marginLeft:4}}>· {m.modelo}</span>:""}</div>}
+                {m.role==="assistant"&&<div className="msg-name">Vortex AI {m.modelo?<span style={{fontSize:9,color:"rgba(123,47,255,.6)",marginLeft:4}}>ï¿½ {m.modelo}</span>:""}</div>}
 
                 <div className={`msg-bubble ${m.role==="assistant"?"bot":"user"}`}>
 
@@ -3458,7 +3458,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
                           <video src={m.videoUrl} controls style={{width:"100%",maxWidth:320,borderRadius:12,display:"block"}}/>
 
-                          <a href={m.videoUrl} download="vortex-video.mp4" style={{display:"inline-block",marginTop:6,fontSize:11,color:"var(--cyan)",textDecoration:"none",background:"rgba(34,211,238,.1)",border:".5px solid rgba(34,211,238,.3)",padding:"3px 10px",borderRadius:99}}>?? Baixar vídeo</a>
+                          <a href={m.videoUrl} download="vortex-video.mp4" style={{display:"inline-block",marginTop:6,fontSize:11,color:"var(--cyan)",textDecoration:"none",background:"rgba(34,211,238,.1)",border:".5px solid rgba(34,211,238,.3)",padding:"3px 10px",borderRadius:99}}>?? Baixar vï¿½deo</a>
 
                         </div>
 
@@ -3468,11 +3468,11 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
                         <div style={{marginTop:8,background:"rgba(123,47,255,.08)",border:".5px solid rgba(123,47,255,.25)",borderRadius:12,padding:"10px 14px"}}>
 
-                          <div style={{fontSize:11,color:"var(--purple2)",marginBottom:6,fontWeight:600}}>??? Narração</div>
+                          <div style={{fontSize:11,color:"var(--purple2)",marginBottom:6,fontWeight:600}}>??? Narraï¿½ï¿½o</div>
 
                           <audio src={m.audioUrl} controls style={{width:"100%",height:36}}/>
 
-                          <a href={m.audioUrl} download="vortex-audio.mp3" style={{display:"inline-block",marginTop:6,fontSize:11,color:"var(--purple2)",textDecoration:"none",background:"rgba(123,47,255,.1)",border:".5px solid rgba(123,47,255,.3)",padding:"3px 10px",borderRadius:99}}>?? Baixar áudio</a>
+                          <a href={m.audioUrl} download="vortex-audio.mp3" style={{display:"inline-block",marginTop:6,fontSize:11,color:"var(--purple2)",textDecoration:"none",background:"rgba(123,47,255,.1)",border:".5px solid rgba(123,47,255,.3)",padding:"3px 10px",borderRadius:99}}>?? Baixar ï¿½udio</a>
 
                         </div>
 
@@ -3544,7 +3544,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
               <textarea ref={taRef} className="chat-textarea"
 
-                placeholder={window.__vortexModo==="assistente"?"Pergunte qualquer coisa — como Claude, GPT e Gemini...":"Roteiro, estratégia, hook, tendência — o que criar hoje?"}
+                placeholder={window.__vortexModo==="assistente"?"Pergunte qualquer coisa ï¿½ como Claude, GPT e Gemini...":"Roteiro, estratï¿½gia, hook, tendï¿½ncia ï¿½ o que criar hoje?"}
 
                 value={input} rows={1}
 
@@ -3576,13 +3576,13 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
               </button>
 
-              <button className="chat-action-btn" onClick={()=>setInput("Quais tendências estão bombando em ")}>
+              <button className="chat-action-btn" onClick={()=>setInput("Quais tendï¿½ncias estï¿½o bombando em ")}>
 
-                <span style={{fontSize:16}}>??</span><span>Tendência</span>
+                <span style={{fontSize:16}}>??</span><span>Tendï¿½ncia</span>
 
               </button>
 
-              <button className="chat-action-btn" onClick={()=>setInput("Me dê ideias de conteúdo para ")}>
+              <button className="chat-action-btn" onClick={()=>setInput("Me dï¿½ ideias de conteï¿½do para ")}>
 
                 <span style={{fontSize:16}}>??</span><span>Ideias</span>
 
@@ -3594,7 +3594,7 @@ Verifique sua VITE_WAVESPEED_API_KEY no .env`}];
 
           </div>
 
-          <div className="chat-hint">Enter para enviar · Shift+Enter para nova linha</div>
+          <div className="chat-hint">Enter para enviar ï¿½ Shift+Enter para nova linha</div>
 
         </div>
 
@@ -3628,7 +3628,7 @@ function VideoFaceless() {
 
 
 
-  const NICHOS=["terror","gaming","finanças","fitness","lifestyle","tech","motivacional","curiosidades","crime real","anime"];
+  const NICHOS=["terror","gaming","finanï¿½as","fitness","lifestyle","tech","motivacional","curiosidades","crime real","anime"];
 
   const ETAPAS=["?? Gerando roteiro...","?? Criando imagens...","??? Narrando...","?? Finalizando..."];
 
@@ -3684,11 +3684,11 @@ function VideoFaceless() {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criação</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criaï¿½ï¿½o</div>
 
-        <h1 className="page-title">Vídeo Faceless <em>1 Clique</em></h1>
+        <h1 className="page-title">Vï¿½deo Faceless <em>1 Clique</em></h1>
 
-        <p className="page-sub">Digite o tema ? Vortex cria roteiro + imagens + narração automático</p>
+        <p className="page-sub">Digite o tema ? Vortex cria roteiro + imagens + narraï¿½ï¿½o automï¿½tico</p>
 
       </div>
 
@@ -3698,13 +3698,13 @@ function VideoFaceless() {
 
         <div style={{fontSize:13,color:"rgba(200,180,255,.8)",marginBottom:12,lineHeight:1.6}}>
 
-          ? <strong>Como funciona:</strong> Você digita o tema ? Vortex gera roteiro viral ? cria imagens para cada cena ? narra com voz profissional ? entrega tudo pronto
+          ? <strong>Como funciona:</strong> Vocï¿½ digita o tema ? Vortex gera roteiro viral ? cria imagens para cada cena ? narra com voz profissional ? entrega tudo pronto
 
         </div>
 
         <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6}}>
 
-          {["?? Roteiro","?? Imagens","??? Narração","?? Pronto"].map((s,i)=>(
+          {["?? Roteiro","?? Imagens","??? Narraï¿½ï¿½o","?? Pronto"].map((s,i)=>(
 
             <div key={i} style={{background:"rgba(124,92,252,.1)",borderRadius:8,padding:"8px 4px",textAlign:"center",fontSize:11,color:"rgba(200,180,255,.8)"}}>
 
@@ -3724,11 +3724,11 @@ function VideoFaceless() {
 
         <div className="field">
 
-          <label className="label">Tema do vídeo</label>
+          <label className="label">Tema do vï¿½deo</label>
 
           <textarea className="input" rows={3}
 
-            placeholder="Ex: Um serial killer que ninguém sabia que morava ao lado... / O segredo que a NASA esconde sobre Marte..."
+            placeholder="Ex: Um serial killer que ninguï¿½m sabia que morava ao lado... / O segredo que a NASA esconde sobre Marte..."
 
             value={tema} onChange={e=>setTema(e.target.value)} disabled={loading}/>
 
@@ -3796,7 +3796,7 @@ function VideoFaceless() {
 
           style={{background:loading||!tema.trim()?"var(--surface2)":"linear-gradient(135deg,#7C3AED,#A855F7)",color:loading||!tema.trim()?"var(--text3)":"white",border:"none",fontSize:15,fontWeight:700}}>
 
-          {loading?"? Criando seu vídeo...":"? Gerar Vídeo Faceless"}
+          {loading?"? Criando seu vï¿½deo...":"? Gerar Vï¿½deo Faceless"}
 
         </button>
 
@@ -3812,7 +3812,7 @@ function VideoFaceless() {
 
           <div className="card" style={{background:"#7C3AED18",border:"1px solid #7C3AED44"}}>
 
-            <div style={{fontWeight:700,fontSize:14,color:"#A855F7",marginBottom:8}}>? Vídeo pronto!</div>
+            <div style={{fontWeight:700,fontSize:14,color:"#A855F7",marginBottom:8}}>? Vï¿½deo pronto!</div>
 
             <div style={{fontSize:13,fontWeight:600,color:"var(--text1)",marginBottom:4}}>{resultado.metadados?.titulo}</div>
 
@@ -3842,13 +3842,13 @@ function VideoFaceless() {
 
 
 
-          {/* Áudio */}
+          {/* ï¿½udio */}
 
           {resultado.etapas?.audio&&(
 
             <div className="card">
 
-              <div style={{fontWeight:600,fontSize:13,marginBottom:8}}>??? Narração</div>
+              <div style={{fontWeight:600,fontSize:13,marginBottom:8}}>??? Narraï¿½ï¿½o</div>
 
               <audio controls src={resultado.etapas.audio} style={{width:"100%"}}/>
 
@@ -3928,7 +3928,7 @@ function AnalisarVideo() {
 
 
 
-  const NICHOS=["viral","terror","gaming","finanças","fitness","lifestyle","tech","humor","educação"];
+  const NICHOS=["viral","terror","gaming","finanï¿½as","fitness","lifestyle","tech","humor","educaï¿½ï¿½o"];
 
 
 
@@ -3938,11 +3938,11 @@ function AnalisarVideo() {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>Análise</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>Anï¿½lise</div>
 
-        <h1 className="page-title">Análise de <em>Vídeo</em></h1>
+        <h1 className="page-title">Anï¿½lise de <em>Vï¿½deo</em></h1>
 
-        <p className="page-sub">Cole os dados do vídeo e descubra por que viralizou ou não.</p>
+        <p className="page-sub">Cole os dados do vï¿½deo e descubra por que viralizou ou nï¿½o.</p>
 
       </div>
 
@@ -3952,7 +3952,7 @@ function AnalisarVideo() {
 
         <div className="field">
 
-          <label className="label">Título do vídeo</label>
+          <label className="label">Tï¿½tulo do vï¿½deo</label>
 
           <input className="input" placeholder="Ex: A verdade sobre..." value={titulo} onChange={e=>setTitulo(e.target.value)}/>
 
@@ -3980,7 +3980,7 @@ function AnalisarVideo() {
 
           <div className="field">
 
-            <label className="label">?? Comentários</label>
+            <label className="label">?? Comentï¿½rios</label>
 
             <input className="input" type="number" placeholder="Ex: 500" value={comentarios} onChange={e=>setComentarios(e.target.value)}/>
 
@@ -4024,7 +4024,7 @@ function AnalisarVideo() {
 
           style={{background:loading?"var(--surface2)":"linear-gradient(135deg,#7C3AED,#A855F7)",color:loading?"var(--text3)":"white",border:"none"}}>
 
-          {loading?"?? Analisando com IA...":"?? Analisar Vídeo"}
+          {loading?"?? Analisando com IA...":"?? Analisar Vï¿½deo"}
 
         </button>
 
@@ -4036,7 +4036,7 @@ function AnalisarVideo() {
 
         <div className="card" style={{background:"linear-gradient(135deg,#0d0020,#1a003d)",border:"1px solid rgba(124,92,252,.3)"}}>
 
-          {/* Métricas */}
+          {/* Mï¿½tricas */}
 
           <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:16}}>
 
@@ -4064,7 +4064,7 @@ function AnalisarVideo() {
 
           </div>
 
-          {/* Análise */}
+          {/* Anï¿½lise */}
 
           <div style={{whiteSpace:"pre-wrap",fontSize:13,lineHeight:1.8,color:"var(--text2)"}}>
 
@@ -4166,7 +4166,7 @@ function Dashboard({ setAba }) {
 
         <div className="eyebrow"><div className="eyebrow-dot"/>painel</div>
 
-        <h1 className="page-title">{nome ? "Olá, "+nome.split(" ")[0]+" ??" : "Bem-vindo ao"} <em>{nome?"Vortex":"Vortex"}</em></h1>
+        <h1 className="page-title">{nome ? "Olï¿½, "+nome.split(" ")[0]+" ??" : "Bem-vindo ao"} <em>{nome?"Vortex":"Vortex"}</em></h1>
 
         <p className="page-sub">{nicho ? "Nicho: "+nicho : "Configure seu perfil para personalizar tudo"}</p>
 
@@ -4182,7 +4182,7 @@ function Dashboard({ setAba }) {
 
           <div style={{fontSize:28,fontWeight:800,fontFamily:"var(--fh)",color:"var(--purple2)"}}>{stats.saldo}</div>
 
-          <div style={{fontSize:11,color:"var(--text3)",marginTop:4}}>?? Créditos</div>
+          <div style={{fontSize:11,color:"var(--text3)",marginTop:4}}>?? Crï¿½ditos</div>
 
         </div>
 
@@ -4198,7 +4198,7 @@ function Dashboard({ setAba }) {
 
           <div style={{fontSize:28}}>??</div>
 
-          <div style={{fontSize:11,color:"var(--text3)",marginTop:4}}>Gerar Vídeo</div>
+          <div style={{fontSize:11,color:"var(--text3)",marginTop:4}}>Gerar Vï¿½deo</div>
 
         </div>
 
@@ -4206,15 +4206,15 @@ function Dashboard({ setAba }) {
 
 
 
-      {/* Ações rápidas */}
+      {/* Aï¿½ï¿½es rï¿½pidas */}
 
-      {/* Card do Cérebro */}
+      {/* Card do Cï¿½rebro */}
 
       <div className="card" style={{marginBottom:"1rem",background:"rgba(123,47,255,.04)",border:"0.5px solid rgba(123,47,255,.2)"}}>
 
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
 
-          <div className="card-title">?? Cérebro do Vortex</div>
+          <div className="card-title">?? Cï¿½rebro do Vortex</div>
 
           <span style={{fontSize:10,color:"var(--accent)",background:"rgba(123,47,255,.1)",padding:"2px 8px",borderRadius:20,letterSpacing:1}}>APRENDENDO</span>
 
@@ -4234,7 +4234,7 @@ function Dashboard({ setAba }) {
 
             <div style={{fontSize:20,fontWeight:800,color:"#34d399"}}>{cerebro.taxa_aprovacao||0}%</div>
 
-            <div style={{fontSize:10,color:"var(--text3)"}}>taxa aprovação</div>
+            <div style={{fontSize:10,color:"var(--text3)"}}>taxa aprovaï¿½ï¿½o</div>
 
           </div>
 
@@ -4276,7 +4276,7 @@ function Dashboard({ setAba }) {
 
       <div className="card" style={{marginBottom:"1rem"}}>
 
-        <div className="card-title" style={{marginBottom:".75rem"}}>? Ações Rápidas</div>
+        <div className="card-title" style={{marginBottom:".75rem"}}>? Aï¿½ï¿½es Rï¿½pidas</div>
 
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
 
@@ -4286,7 +4286,7 @@ function Dashboard({ setAba }) {
 
             {icon:"??",label:"Analisar Perfil",aba:"analise"},
 
-            {icon:"??",label:"Ver Tendências",aba:"tendencias"},
+            {icon:"??",label:"Ver Tendï¿½ncias",aba:"tendencias"},
 
             {icon:"??",label:"Meus Personagens",aba:"personagens"},
 
@@ -4332,7 +4332,7 @@ function Dashboard({ setAba }) {
 
           <button className="btn btn-ghost" style={{marginTop:10,width:"100%"}} onClick={()=>setAba("tendencias")}>
 
-            Ver todas as tendências ?
+            Ver todas as tendï¿½ncias ?
 
           </button>
 
@@ -4436,11 +4436,11 @@ function AnalisePerfil({ setAba }) {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>Análise</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>Anï¿½lise</div>
 
-        <h1 className="page-title">Análise de <em>Perfil</em></h1>
+        <h1 className="page-title">Anï¿½lise de <em>Perfil</em></h1>
 
-        <p className="page-sub">Dados reais + recomendações IA para crescer.</p>
+        <p className="page-sub">Dados reais + recomendaï¿½ï¿½es IA para crescer.</p>
 
       </div>
 
@@ -4500,7 +4500,7 @@ function AnalisePerfil({ setAba }) {
 
         <button className="btn btn-full" onClick={analisar} disabled={loading||!perfil.trim()}>
 
-          {loading ? "?? Analisando..." : `?? Analisar ${redeAtual?.label} — 2 créditos`}
+          {loading ? "?? Analisando..." : `?? Analisar ${redeAtual?.label} ï¿½ 2 crï¿½ditos`}
 
         </button>
 
@@ -4580,7 +4580,7 @@ function AnalisePerfil({ setAba }) {
 
 
 
-          {/* Análise completa da IA */}
+          {/* Anï¿½lise completa da IA */}
 
           {(dados.analise_completa || dados.recomendacao_ia) && (
 
@@ -4588,7 +4588,7 @@ function AnalisePerfil({ setAba }) {
 
               <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:12}}>
 
-                <div className="card-title">?? Análise do Vortex AI</div>
+                <div className="card-title">?? Anï¿½lise do Vortex AI</div>
 
                 <button onClick={()=>{
 
@@ -4634,7 +4634,7 @@ function AnalisePerfil({ setAba }) {
 
                   background:"rgba(52,211,153,.08)",color:"#34d399",cursor:"pointer"}}>
 
-                  ?? Útil
+                  ?? ï¿½til
 
                 </button>
 
@@ -4664,11 +4664,11 @@ function AnalisePerfil({ setAba }) {
 
 
 
-          {/* Ações rápidas */}
+          {/* Aï¿½ï¿½es rï¿½pidas */}
 
           <div className="card">
 
-            <div className="card-title" style={{marginBottom:10}}>? Ações rápidas</div>
+            <div className="card-title" style={{marginBottom:10}}>? Aï¿½ï¿½es rï¿½pidas</div>
 
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
 
@@ -4710,31 +4710,31 @@ function Roteiro() {
 
     {id:"normal",    icon:"?", label:"Viral",     desc:"Roteiro otimizado para viralizar"},
 
-    {id:"diretor",   icon:"??", label:"Diretor",   desc:"Frame a frame com direção de câmera"},
+    {id:"diretor",   icon:"??", label:"Diretor",   desc:"Frame a frame com direï¿½ï¿½o de cï¿½mera"},
 
-    {id:"serie",     icon:"??", label:"Série",     desc:"3 episódios com cliffhanger"},
+    {id:"serie",     icon:"??", label:"Sï¿½rie",     desc:"3 episï¿½dios com cliffhanger"},
 
-    {id:"ab",        icon:"??", label:"A/B",       desc:"2 versões para testar qual performa mais"},
+    {id:"ab",        icon:"??", label:"A/B",       desc:"2 versï¿½es para testar qual performa mais"},
 
-    {id:"faceless",  icon:"??", label:"Faceless",  desc:"Sem mostrar rosto — narração + imagens"},
+    {id:"faceless",  icon:"??", label:"Faceless",  desc:"Sem mostrar rosto ï¿½ narraï¿½ï¿½o + imagens"},
 
-    {id:"anuncio",   icon:"??", label:"Anúncio",   desc:"Roteiro de conversão para vender"},
+    {id:"anuncio",   icon:"??", label:"Anï¿½ncio",   desc:"Roteiro de conversï¿½o para vender"},
 
   ];
 
   const FORMATOS = [
 
-    {id:"curto",    label:"30s", desc:"1 crédito"},
+    {id:"curto",    label:"30s", desc:"1 crï¿½dito"},
 
-    {id:"medio",    label:"60s", desc:"2 créditos"},
+    {id:"medio",    label:"60s", desc:"2 crï¿½ditos"},
 
-    {id:"longo",    label:"3min",desc:"3 créditos"},
+    {id:"longo",    label:"3min",desc:"3 crï¿½ditos"},
 
-    {id:"completo", label:"5min",desc:"5 créditos"},
+    {id:"completo", label:"5min",desc:"5 crï¿½ditos"},
 
   ];
 
-  const NICHOS = ["terror","gaming","finanças","fitness","lifestyle","tech","motivacional","culinária","humor","anime","educacional","empreendedorismo"];
+  const NICHOS = ["terror","gaming","finanï¿½as","fitness","lifestyle","tech","motivacional","culinï¿½ria","humor","anime","educacional","empreendedorismo"];
 
   const PLATAFORMAS = ["TikTok","Instagram","YouTube Shorts","Kwai"];
 
@@ -4772,9 +4772,9 @@ function Roteiro() {
 
   const extrairScore = (txt) => {
 
-    const m = txt.match(/MÉDIA[:\s]+(\d+(?:[.,]\d+)?)/i) ||
+    const m = txt.match(/Mï¿½DIA[:\s]+(\d+(?:[.,]\d+)?)/i) ||
 
-              txt.match(/média[:\s]+(\d+(?:[.,]\d+)?)/i) ||
+              txt.match(/mï¿½dia[:\s]+(\d+(?:[.,]\d+)?)/i) ||
 
               txt.match(/(\d+(?:[.,]\d+)?)\/10\s*$/) ;
 
@@ -4796,7 +4796,7 @@ function Roteiro() {
 
     const etapas = [
 
-      {p:8,  msg:"Pesquisando tendências reais..."},
+      {p:8,  msg:"Pesquisando tendï¿½ncias reais..."},
 
       {p:20, msg:"Analisando o nicho..."},
 
@@ -4808,7 +4808,7 @@ function Roteiro() {
 
       {p:85, msg:"Calculando score viral..."},
 
-      {p:95, msg:"Finalizando produção..."},
+      {p:95, msg:"Finalizando produï¿½ï¿½o..."},
 
     ];
 
@@ -4854,7 +4854,7 @@ function Roteiro() {
 
       setScore(sc);
 
-      // Salvar no histórico local
+      // Salvar no histï¿½rico local
 
       setHist(h=>[{tema,modo,formato,score:sc,roteiro:d.roteiro,ts:Date.now()},...h].slice(0,10));
 
@@ -4888,7 +4888,7 @@ function Roteiro() {
 
         <h1 className="page-title">Gerador de <em>Roteiro</em></h1>
 
-        <p className="page-sub">Roteiros virais com IA — hook, virada e score em segundos.</p>
+        <p className="page-sub">Roteiros virais com IA ï¿½ hook, virada e score em segundos.</p>
 
       </div>
 
@@ -4944,11 +4944,11 @@ function Roteiro() {
 
             placeholder={
 
-              modo==="terror"?"Ex: O apartamento que ninguém conseguia alugar por mais de 30 dias...":
+              modo==="terror"?"Ex: O apartamento que ninguï¿½m conseguia alugar por mais de 30 dias...":
 
               modo==="anuncio"?"Ex: App que dobrou minha renda em 30 dias...":
 
-              "Ex: O experimento psicológico que provou que todos mentem..."
+              "Ex: O experimento psicolï¿½gico que provou que todos mentem..."
 
             }
 
@@ -4996,7 +4996,7 @@ function Roteiro() {
 
           <div className="field">
 
-            <label className="label">Duração</label>
+            <label className="label">Duraï¿½ï¿½o</label>
 
             <div className="chips" style={{flexWrap:"wrap"}}>
 
@@ -5028,7 +5028,7 @@ function Roteiro() {
 
               <span>
 
-                {progresso<20?"?? Pesquisando tendências...":
+                {progresso<20?"?? Pesquisando tendï¿½ncias...":
 
                  progresso<40?"?? Construindo o hook...":
 
@@ -5070,7 +5070,7 @@ function Roteiro() {
 
           {loading?<><div className="spinner"/>Gerando roteiro...</>:
 
-           `?? Gerar Roteiro ${modo==="ab"?"A/B":modo==="serie"?"em Série":modo==="diretor"?"Diretor":""} — ${FORMATOS.find(f=>f.id===formato)?.desc||"2 créditos"}`}
+           `?? Gerar Roteiro ${modo==="ab"?"A/B":modo==="serie"?"em Sï¿½rie":modo==="diretor"?"Diretor":""} ï¿½ ${FORMATOS.find(f=>f.id===formato)?.desc||"2 crï¿½ditos"}`}
 
         </button>
 
@@ -5100,7 +5100,7 @@ function Roteiro() {
 
               <div style={{fontSize:13,fontWeight:600,color:scoreColor,marginTop:4}}>
 
-                {scoreViral>=9?"?? Potencial viral altíssimo":scoreViral>=7?"? Bom potencial viral":"?? Pode melhorar"}
+                {scoreViral>=9?"?? Potencial viral altï¿½ssimo":scoreViral>=7?"? Bom potencial viral":"?? Pode melhorar"}
 
               </div>
 
@@ -5152,29 +5152,29 @@ function Roteiro() {
 
 
 
-          {/* Ações */}
+          {/* Aï¿½ï¿½es */}
 
           <div className="card" style={{marginBottom:12}}>
 
-            <div className="card-title" style={{marginBottom:10}}>?? Próximos passos</div>
+            <div className="card-title" style={{marginBottom:10}}>?? Prï¿½ximos passos</div>
 
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
 
-              <button className="btn" style={{fontSize:12}} onClick={()=>{setTema(tema+" — versão 2");gerarRoteiro();}}>
+              <button className="btn" style={{fontSize:12}} onClick={()=>{setTema(tema+" ï¿½ versï¿½o 2");gerarRoteiro();}}>
 
-                ?? Gerar variação
+                ?? Gerar variaï¿½ï¿½o
 
               </button>
 
               <button className="btn" style={{fontSize:12}} onClick={()=>{setModo("ab");gerarRoteiro();}}>
 
-                ?? Criar versão A/B
+                ?? Criar versï¿½o A/B
 
               </button>
 
               <button className="btn" style={{fontSize:12}} onClick={()=>{setModo("diretor");gerarRoteiro();}}>
 
-                ?? Versão Diretor
+                ?? Versï¿½o Diretor
 
               </button>
 
@@ -5186,7 +5186,7 @@ function Roteiro() {
 
               }}>
 
-                ?? Exportar para edição
+                ?? Exportar para ediï¿½ï¿½o
 
               </button>
 
@@ -5196,9 +5196,9 @@ function Roteiro() {
 
                   const audioUrl = await aimlTTS(resultado.slice(0,3000),"nova");
 
-                  const a=document.createElement("a");a.href=audioUrl;a.download="narração-vortex.mp3";a.click();
+                  const a=document.createElement("a");a.href=audioUrl;a.download="narraï¿½ï¿½o-vortex.mp3";a.click();
 
-                  alert("? Narração gerada e baixando!");
+                  alert("? Narraï¿½ï¿½o gerada e baixando!");
 
                 } catch(e){alert("TTS: "+e.message);}
 
@@ -5214,7 +5214,7 @@ function Roteiro() {
 
 
 
-          {/* Feedback cérebro */}
+          {/* Feedback cï¿½rebro */}
 
           {!feedbackDado&&(
 
@@ -5262,7 +5262,7 @@ function Roteiro() {
 
           )}
 
-          {feedbackDado&&<div style={{textAlign:"center",color:"#34d399",fontSize:13,padding:8}}>? Vortex aprendeu! Próximos roteiros serão melhores.</div>}
+          {feedbackDado&&<div style={{textAlign:"center",color:"#34d399",fontSize:13,padding:8}}>? Vortex aprendeu! Prï¿½ximos roteiros serï¿½o melhores.</div>}
 
         </div>
 
@@ -5270,13 +5270,13 @@ function Roteiro() {
 
 
 
-      {/* Histórico local */}
+      {/* Histï¿½rico local */}
 
       {historico.length>0&&!resultado&&(
 
         <div className="card">
 
-          <div className="card-title" style={{marginBottom:10}}>?? Histórico desta sessão</div>
+          <div className="card-title" style={{marginBottom:10}}>?? Histï¿½rico desta sessï¿½o</div>
 
           {historico.map((h,i)=>(
 
@@ -5290,7 +5290,7 @@ function Roteiro() {
 
                 <div style={{fontSize:12,fontWeight:600,color:"var(--text)"}}>{h.tema.slice(0,50)}</div>
 
-                <div style={{fontSize:10,color:"var(--text3)"}}>{h.modo} · {h.formato}</div>
+                <div style={{fontSize:10,color:"var(--text3)"}}>{h.modo} ï¿½ {h.formato}</div>
 
               </div>
 
@@ -5336,7 +5336,7 @@ function Tendencias() {
 
 
 
-  // Google Trends — carrega automático
+  // Google Trends ï¿½ carrega automï¿½tico
 
   useEffect(()=>{
 
@@ -5372,9 +5372,9 @@ function Tendencias() {
 
         const r=await callClaude(
 
-          "Especialista em tendências virais de redes sociais. Responda em português.",
+          "Especialista em tendï¿½ncias virais de redes sociais. Responda em portuguï¿½s.",
 
-          `Liste as top 8 tendências de conteúdo para ${nicho} no ${plataforma} em 2026. Para cada: nome, por que viraliza, dica prática de uso. Responda SOMENTE JSON: {"tendencias":[{"nome":"...","motivo":"...","dica":"...","emoji":"..."}]}`
+          `Liste as top 8 tendï¿½ncias de conteï¿½do para ${nicho} no ${plataforma} em 2026. Para cada: nome, por que viraliza, dica prï¿½tica de uso. Responda SOMENTE JSON: {"tendencias":[{"nome":"...","motivo":"...","dica":"...","emoji":"..."}]}`
 
         );
 
@@ -5402,7 +5402,7 @@ function Tendencias() {
 
 
 
-  const NICHOS=["terror","gaming","finanças","fitness","lifestyle","tech","motivacional","culinária","humor","anime"];
+  const NICHOS=["terror","gaming","finanï¿½as","fitness","lifestyle","tech","motivacional","culinï¿½ria","humor","anime"];
 
   const PLATS=["TikTok","Instagram","YouTube","Kwai"];
 
@@ -5416,9 +5416,9 @@ function Tendencias() {
 
         <div className="eyebrow"><div className="eyebrow-dot"/>2026</div>
 
-        <h1 className="page-title">Tendências <em>Virais</em></h1>
+        <h1 className="page-title">Tendï¿½ncias <em>Virais</em></h1>
 
-        <p className="page-sub">Google Trends em tempo real + análise por nicho.</p>
+        <p className="page-sub">Google Trends em tempo real + anï¿½lise por nicho.</p>
 
         <div style={{display:"inline-flex",alignItems:"center",gap:6,marginTop:6,
 
@@ -5428,7 +5428,7 @@ function Tendencias() {
 
           <span style={{fontSize:12}}>?</span>
 
-          <span style={{fontSize:11,color:"#34d399",fontWeight:600}}>Grátis e ilimitado — disponível em todos os planos</span>
+          <span style={{fontSize:11,color:"#34d399",fontWeight:600}}>Grï¿½tis e ilimitado ï¿½ disponï¿½vel em todos os planos</span>
 
         </div>
 
@@ -5446,7 +5446,7 @@ function Tendencias() {
 
           {id:"nicho",icon:"??",label:"Por Nicho"},
 
-          {id:"global",icon:"??",label:"Tendência Global"},
+          {id:"global",icon:"??",label:"Tendï¿½ncia Global"},
 
         ].map(t=>(
 
@@ -5602,7 +5602,7 @@ function Tendencias() {
 
             <button className="btn btn-full" onClick={buscar} disabled={loading}>
 
-              {loading?<><div className="spinner"/>Analisando...</>:"?? Ver top 8 tendências"}
+              {loading?<><div className="spinner"/>Analisando...</>:"?? Ver top 8 tendï¿½ncias"}
 
             </button>
 
@@ -5616,7 +5616,7 @@ function Tendencias() {
 
               <div className="card-title" style={{marginBottom:12}}>
 
-                Top 8 — {dados.nicho} no {dados.plataforma}
+                Top 8 ï¿½ {dados.nicho} no {dados.plataforma}
 
               </div>
 
@@ -5684,7 +5684,7 @@ function Tendencias() {
 
             <button className="btn btn-full" onClick={buscar} disabled={loading}>
 
-              {loading?<><div className="spinner"/>Buscando...</>:"?? Ver tendência global"}
+              {loading?<><div className="spinner"/>Buscando...</>:"?? Ver tendï¿½ncia global"}
 
             </button>
 
@@ -5694,7 +5694,7 @@ function Tendencias() {
 
             <div className="card">
 
-              <div className="card-title" style={{marginBottom:12}}>?? Tendências Globais</div>
+              <div className="card-title" style={{marginBottom:12}}>?? Tendï¿½ncias Globais</div>
 
               {dados.lista.map((t,i)=>{
 
@@ -5742,7 +5742,7 @@ function Tendencias() {
 
 function PlaceholderPage({ title, icon, desc }) {
 
-  return(<div className="page"><div className="page-header"><h1 className="page-title"><em>{title}</em></h1><p className="page-sub">{desc}</p></div><div className="card" style={{textAlign:"center",padding:"3rem 1.5rem"}}><div style={{fontSize:48,marginBottom:"1.25rem"}}>{icon}</div><p style={{fontSize:14,color:"var(--text2)",lineHeight:1.6}}>Em breve disponível.</p></div></div>);
+  return(<div className="page"><div className="page-header"><h1 className="page-title"><em>{title}</em></h1><p className="page-sub">{desc}</p></div><div className="card" style={{textAlign:"center",padding:"3rem 1.5rem"}}><div style={{fontSize:48,marginBottom:"1.25rem"}}>{icon}</div><p style={{fontSize:14,color:"var(--text2)",lineHeight:1.6}}>Em breve disponï¿½vel.</p></div></div>);
 
 }
 
@@ -5766,17 +5766,17 @@ const PLANO_FREE = {
 
   features:[
 
-    "50 créditos grátis",
+    "50 crï¿½ditos grï¿½tis",
 
-    "?? Tendências em tempo real — ILIMITADO",
+    "?? Tendï¿½ncias em tempo real ï¿½ ILIMITADO",
 
-    "? Score Viral — ILIMITADO",
+    "? Score Viral ï¿½ ILIMITADO",
 
     "Chat com IA (10x/dia)",
 
     "3 roteiros por dia",
 
-    "5 imagens por mês",
+    "5 imagens por mï¿½s",
 
   ],
 
@@ -5790,7 +5790,7 @@ const PLANO_FREE = {
 
 const PLANOS_BASE = [
 
-  { id:"starter", nome:"Starter", emoji:"?", desc:"Para começar",
+  { id:"starter", nome:"Starter", emoji:"?", desc:"Para comeï¿½ar",
 
     creditos:250, imgs:25, vids:4, voz:false,
 
@@ -5798,7 +5798,7 @@ const PLANOS_BASE = [
 
     preco_mensal:9, preco_anual:7, creditos_anual:300,
 
-    features:["250 créditos/mês","25 imagens IA","4 vídeos","Roteiros ilimitados","Chat com Gemini"],
+    features:["250 crï¿½ditos/mï¿½s","25 imagens IA","4 vï¿½deos","Roteiros ilimitados","Chat com Gemini"],
 
     modelo:"Gemini Flash"
 
@@ -5808,11 +5808,11 @@ const PLANOS_BASE = [
 
     creditos:900, imgs:90, vids:12, voz:true,
 
-    promo:27, normal:49, cor:"#22d3ee", anim:"galaxia", animLabel:"?? Galáxia", popular:true,
+    promo:27, normal:49, cor:"#22d3ee", anim:"galaxia", animLabel:"?? Galï¿½xia", popular:true,
 
     preco_mensal:27, preco_anual:22, creditos_anual:1100,
 
-    features:["900 créditos/mês","90 imagens IA","12 vídeos","Clonagem de voz","Chat com GPT-4o","Score Viral","Tendências em tempo real"],
+    features:["900 crï¿½ditos/mï¿½s","90 imagens IA","12 vï¿½deos","Clonagem de voz","Chat com GPT-4o","Score Viral","Tendï¿½ncias em tempo real"],
 
     modelo:"GPT-4o via AIML"
 
@@ -5826,21 +5826,21 @@ const PLANOS_BASE = [
 
     preco_mensal:57, preco_anual:47, creditos_anual:3000,
 
-    features:["2.500 créditos/mês","250 imagens IA","35 vídeos","Clonagem de voz","Chat com Claude Haiku","Análise de perfil avançada","Memória do Vortex","Suporte prioritário"],
+    features:["2.500 crï¿½ditos/mï¿½s","250 imagens IA","35 vï¿½deos","Clonagem de voz","Chat com Claude Haiku","Anï¿½lise de perfil avanï¿½ada","Memï¿½ria do Vortex","Suporte prioritï¿½rio"],
 
     modelo:"Claude Haiku"
 
   },
 
-  { id:"elite", nome:"Elite", emoji:"?", desc:"Sem preocupação",
+  { id:"elite", nome:"Elite", emoji:"?", desc:"Sem preocupaï¿½ï¿½o",
 
     creditos:8000, imgs:800, vids:120, voz:true,
 
-    promo:97, normal:199, cor:"#f472b6", anim:"portal", animLabel:"? Portal Cósmico",
+    promo:97, normal:199, cor:"#f472b6", anim:"portal", animLabel:"? Portal Cï¿½smico",
 
     preco_mensal:97, preco_anual:80, creditos_anual:10000,
 
-    features:["8.000 créditos/mês","800 imagens IA","120 vídeos","Clonagem de voz premium","Chat com Claude Sonnet","Todos os recursos","API própria (em breve)","Suporte VIP 24h"],
+    features:["8.000 crï¿½ditos/mï¿½s","800 imagens IA","120 vï¿½deos","Clonagem de voz premium","Chat com Claude Sonnet","Todos os recursos","API prï¿½pria (em breve)","Suporte VIP 24h"],
 
     modelo:"Claude Sonnet"
 
@@ -5854,13 +5854,13 @@ const PACKS = [
 
   {
 
-    id:"basico", nome:"Pack Básico", emoji:"?", creditos:500,
+    id:"basico", nome:"Pack Bï¿½sico", emoji:"?", creditos:500,
 
     promo:15, normal:19, cor:"#fbbf24",
 
-    desc:"Ideal para testar mais — sem prazo de validade",
+    desc:"Ideal para testar mais ï¿½ sem prazo de validade",
 
-    features:["500 créditos extras","Sem expiração","~50 roteiros ou 100 imagens"],
+    features:["500 crï¿½ditos extras","Sem expiraï¿½ï¿½o","~50 roteiros ou 100 imagens"],
 
   },
 
@@ -5870,9 +5870,9 @@ const PACKS = [
 
     promo:45, normal:59, cor:"#9d5cff", popular:true,
 
-    desc:"Melhor custo-benefício — 22% mais barato por crédito",
+    desc:"Melhor custo-benefï¿½cio ï¿½ 22% mais barato por crï¿½dito",
 
-    features:["2.000 créditos extras","Sem expiração","~200 roteiros ou 400 imagens"],
+    features:["2.000 crï¿½ditos extras","Sem expiraï¿½ï¿½o","~200 roteiros ou 400 imagens"],
 
   },
 
@@ -5882,9 +5882,9 @@ const PACKS = [
 
     promo:89, normal:119, cor:"#f472b6",
 
-    desc:"Para quem cria muito — 40% mais barato por crédito",
+    desc:"Para quem cria muito ï¿½ 40% mais barato por crï¿½dito",
 
-    features:["5.000 créditos extras","Sem expiração","~500 roteiros ou 1.000 imagens"],
+    features:["5.000 crï¿½ditos extras","Sem expiraï¿½ï¿½o","~500 roteiros ou 1.000 imagens"],
 
   },
 
@@ -6082,7 +6082,7 @@ function GeradorImagens() {
 
     { id:"realista", label:"?? Realista", prompt:"photorealistic, professional photography, 8k" },
 
-    { id:"cinematico", label:"?? Cinematográfico", prompt:"cinematic, movie scene, dramatic lighting" },
+    { id:"cinematico", label:"?? Cinematogrï¿½fico", prompt:"cinematic, movie scene, dramatic lighting" },
 
     { id:"anime", label:"?? Anime", prompt:"anime style, vibrant colors, manga art" },
 
@@ -6096,29 +6096,29 @@ function GeradorImagens() {
 
   const MODELOS_IMG = [
 
-    // Grátis
+    // Grï¿½tis
 
-    { id:"pollinations",   nome:"?? Pollinations",      desc:"Ilimitado • Grátis",     creditos:0, cor:"#10B981", endpoint:"pollinations", free:true, grupo:"Grátis" },
+    { id:"pollinations",   nome:"?? Pollinations",      desc:"Ilimitado ï¿½ Grï¿½tis",     creditos:0, cor:"#10B981", endpoint:"pollinations", free:true, grupo:"Grï¿½tis" },
 
-    { id:"hf_flux",        nome:"?? FLUX Schnell HF",   desc:"HuggingFace • Grátis",   creditos:0, cor:"#F59E0B", endpoint:"hf_flux",      free:true, grupo:"Grátis" },
+    { id:"hf_flux",        nome:"?? FLUX Schnell HF",   desc:"HuggingFace ï¿½ Grï¿½tis",   creditos:0, cor:"#F59E0B", endpoint:"hf_flux",      free:true, grupo:"Grï¿½tis" },
 
-    { id:"gemini",         nome:"?? Nano Banana Pro",   desc:"Google • Grátis",        creditos:0, cor:"#4285F4", endpoint:"gemini",       free:true, grupo:"Grátis" },
+    { id:"gemini",         nome:"?? Nano Banana Pro",   desc:"Google ï¿½ Grï¿½tis",        creditos:0, cor:"#4285F4", endpoint:"gemini",       free:true, grupo:"Grï¿½tis" },
 
-    // AIML — usa créditos da sua key
+    // AIML ï¿½ usa crï¿½ditos da sua key
 
-    { id:"aiml_flux_schnell",nome:"? FLUX Schnell AIML", desc:"AIML • Rápido",        creditos:5, cor:"#7b2fff", endpoint:"aiml_flux",    aiml:true, grupo:"AIML" },
+    { id:"aiml_flux_schnell",nome:"? FLUX Schnell AIML", desc:"AIML ï¿½ Rï¿½pido",        creditos:5, cor:"#7b2fff", endpoint:"aiml_flux",    aiml:true, grupo:"AIML" },
 
-    { id:"aiml_flux_dev",    nome:"?? FLUX Dev AIML",    desc:"AIML • Alta qualidade", creditos:10, cor:"#9d5cff", endpoint:"aiml_flux_dev",aiml:true, grupo:"AIML" },
+    { id:"aiml_flux_dev",    nome:"?? FLUX Dev AIML",    desc:"AIML ï¿½ Alta qualidade", creditos:10, cor:"#9d5cff", endpoint:"aiml_flux_dev",aiml:true, grupo:"AIML" },
 
-    { id:"aiml_gpt_image",   nome:"??? GPT Image 1.5",   desc:"AIML • OpenAI premium", creditos:10, cor:"#f472b6", endpoint:"aiml_gpt",     aiml:true, grupo:"AIML" },
+    { id:"aiml_gpt_image",   nome:"??? GPT Image 1.5",   desc:"AIML ï¿½ OpenAI premium", creditos:10, cor:"#f472b6", endpoint:"aiml_gpt",     aiml:true, grupo:"AIML" },
 
-    // FAL premium — créditos calculados com margem de segurança real
+    // FAL premium ï¿½ crï¿½ditos calculados com margem de seguranï¿½a real
 
-    { id:"flux_dev",  nome:"Flux Dev",        desc:"FAL • Thumbnails",      creditos:10,  cor:"#7C3AED", endpoint:"flux-dev",  grupo:"FAL", plano_min:"creator" },
+    { id:"flux_dev",  nome:"Flux Dev",        desc:"FAL ï¿½ Thumbnails",      creditos:10,  cor:"#7C3AED", endpoint:"flux-dev",  grupo:"FAL", plano_min:"creator" },
 
-    { id:"ideogram",  nome:"Ideogram v2 ?",  desc:"FAL • Texto em imagem", creditos:25, cor:"#F59E0B", endpoint:"ideogram",  grupo:"FAL", plano_min:"pro" },
+    { id:"ideogram",  nome:"Ideogram v2 ?",  desc:"FAL ï¿½ Texto em imagem", creditos:25, cor:"#F59E0B", endpoint:"ideogram",  grupo:"FAL", plano_min:"pro" },
 
-    { id:"stability", nome:"Stability Ultra", desc:"FAL • Ultra realista",  creditos:20, cor:"#EF4444", endpoint:"stability", grupo:"FAL", plano_min:"pro" },
+    { id:"stability", nome:"Stability Ultra", desc:"FAL ï¿½ Ultra realista",  creditos:20, cor:"#EF4444", endpoint:"stability", grupo:"FAL", plano_min:"pro" },
 
   ];
 
@@ -6194,7 +6194,7 @@ function GeradorImagens() {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criação</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criaï¿½ï¿½o</div>
 
         <h1 className="page-title">Gerador de Imagens</h1>
 
@@ -6214,7 +6214,7 @@ function GeradorImagens() {
 
             <span style={{width:6,height:6,borderRadius:"50%",background:"#7C3AED",display:"inline-block"}}/>
 
-            Gerado com Vortex — clique para copiar o prompt
+            Gerado com Vortex ï¿½ clique para copiar o prompt
 
           </div>
 
@@ -6226,21 +6226,21 @@ function GeradorImagens() {
 
           {[
 
-            {img:"https://picsum.photos/seed/terror1/300/200",tag:"Terror",tagCor:"#ef4444",titulo:"A Noite Que Mudou Tudo",sub:"True crime • 2.3M views",prompt:"homem sozinho em corredor escuro, sombra ameaçadora, terror psicológico, cinematográfico, thumbnail viral"},
+            {img:"https://picsum.photos/seed/terror1/300/200",tag:"Terror",tagCor:"#ef4444",titulo:"A Noite Que Mudou Tudo",sub:"True crime ï¿½ 2.3M views",prompt:"homem sozinho em corredor escuro, sombra ameaï¿½adora, terror psicolï¿½gico, cinematogrï¿½fico, thumbnail viral"},
 
-            {img:"https://picsum.photos/seed/gaming2/300/200",tag:"Gaming",tagCor:"#3b82f6",titulo:"Level Impossível",sub:"FPS gameplay • 4.1M views",prompt:"personagem de game em batalha épica, explosões neon, thumbnail viral gaming TikTok"},
+            {img:"https://picsum.photos/seed/gaming2/300/200",tag:"Gaming",tagCor:"#3b82f6",titulo:"Level Impossï¿½vel",sub:"FPS gameplay ï¿½ 4.1M views",prompt:"personagem de game em batalha ï¿½pica, explosï¿½es neon, thumbnail viral gaming TikTok"},
 
-            {img:"https://picsum.photos/seed/crypto3/300/200",tag:"Finanças",tagCor:"#f59e0b",titulo:"R$50k em 30 Dias",sub:"Crypto • 1.8M views",prompt:"homem surpreso com gráfico de crypto explodindo, dinheiro, thumbnail viral finanças"},
+            {img:"https://picsum.photos/seed/crypto3/300/200",tag:"Finanï¿½as",tagCor:"#f59e0b",titulo:"R$50k em 30 Dias",sub:"Crypto ï¿½ 1.8M views",prompt:"homem surpreso com grï¿½fico de crypto explodindo, dinheiro, thumbnail viral finanï¿½as"},
 
-            {img:"https://picsum.photos/seed/sunrise4/300/200",tag:"Lifestyle",tagCor:"#10b981",titulo:"Acordei às 4h por 30d",sub:"Motivacional • 3.5M views",prompt:"silhueta dramática ao nascer do sol, céu laranja e roxo, motivacional, thumbnail viral"},
+            {img:"https://picsum.photos/seed/sunrise4/300/200",tag:"Lifestyle",tagCor:"#10b981",titulo:"Acordei ï¿½s 4h por 30d",sub:"Motivacional ï¿½ 3.5M views",prompt:"silhueta dramï¿½tica ao nascer do sol, cï¿½u laranja e roxo, motivacional, thumbnail viral"},
 
-            {img:"https://picsum.photos/seed/anime5/300/200",tag:"Anime",tagCor:"#ec4899",titulo:"Protagonista Épico",sub:"Edit • 5.2M views",prompt:"personagem anime em pose épica com aura de poder, estilo Jujutsu Kaisen, thumbnail viral"},
+            {img:"https://picsum.photos/seed/anime5/300/200",tag:"Anime",tagCor:"#ec4899",titulo:"Protagonista ï¿½pico",sub:"Edit ï¿½ 5.2M views",prompt:"personagem anime em pose ï¿½pica com aura de poder, estilo Jujutsu Kaisen, thumbnail viral"},
 
-            {img:"https://picsum.photos/seed/dark6/300/200",tag:"Dark Art",tagCor:"#6b7280",titulo:"Segredo Sombrio",sub:"Mistério • 2.8M views",prompt:"rosto misterioso emergindo das sombras, luz dramática, atmosfera dark cinematográfica"},
+            {img:"https://picsum.photos/seed/dark6/300/200",tag:"Dark Art",tagCor:"#6b7280",titulo:"Segredo Sombrio",sub:"Mistï¿½rio ï¿½ 2.8M views",prompt:"rosto misterioso emergindo das sombras, luz dramï¿½tica, atmosfera dark cinematogrï¿½fica"},
 
-            {img:"https://picsum.photos/seed/tech7/300/200",tag:"Tech",tagCor:"#06b6d4",titulo:"IA vai te substituir",sub:"Tecnologia • 6.1M views",prompt:"robô futurista com IA, código holográfico, estética cyberpunk, thumbnail viral tech"},
+            {img:"https://picsum.photos/seed/tech7/300/200",tag:"Tech",tagCor:"#06b6d4",titulo:"IA vai te substituir",sub:"Tecnologia ï¿½ 6.1M views",prompt:"robï¿½ futurista com IA, cï¿½digo hologrï¿½fico, estï¿½tica cyberpunk, thumbnail viral tech"},
 
-            {img:"https://picsum.photos/seed/fitness8/300/200",tag:"Fitness",tagCor:"#f97316",titulo:"Transformação 90 dias",sub:"Fitness • 4.4M views",prompt:"transformação física dramática, luz intensa de academia, silhueta musculosa, thumbnail fitness"},
+            {img:"https://picsum.photos/seed/fitness8/300/200",tag:"Fitness",tagCor:"#f97316",titulo:"Transformaï¿½ï¿½o 90 dias",sub:"Fitness ï¿½ 4.4M views",prompt:"transformaï¿½ï¿½o fï¿½sica dramï¿½tica, luz intensa de academia, silhueta musculosa, thumbnail fitness"},
 
           ].map((ex,i)=>(
 
@@ -6304,7 +6304,7 @@ function GeradorImagens() {
 
               <div style={{fontSize:11,color:"var(--text3)",marginBottom:6}}>{m.desc}</div>
 
-              <span style={{fontSize:11,color:"var(--text3)",fontWeight:600}}>?? {m.creditos} créditos</span>
+              <span style={{fontSize:11,color:"var(--text3)",fontWeight:600}}>?? {m.creditos} crï¿½ditos</span>
 
             </button>
 
@@ -6352,7 +6352,7 @@ function GeradorImagens() {
 
           <textarea className="input" rows={4}
 
-            placeholder="Ex: homem olhando para explosão de luz, perspectiva dramática, cores vibrantes, thumbnail TikTok..."
+            placeholder="Ex: homem olhando para explosï¿½o de luz, perspectiva dramï¿½tica, cores vibrantes, thumbnail TikTok..."
 
             value={prompt} onChange={e=>setPrompt(e.target.value)} disabled={loading}/>
 
@@ -6362,9 +6362,9 @@ function GeradorImagens() {
 
         <div style={{background:"#7C3AED12",border:"1px solid #7C3AED30",borderRadius:8,padding:"8px 12px",marginBottom:12,display:"flex",justifyContent:"space-between"}}>
 
-          <span style={{fontSize:13,color:"#7C3AED",fontWeight:600}}>{modelo.nome}{estilo?` • ${estilo.label}`:""}</span>
+          <span style={{fontSize:13,color:"#7C3AED",fontWeight:600}}>{modelo.nome}{estilo?` ï¿½ ${estilo.label}`:""}</span>
 
-          <span style={{fontSize:13,color:"var(--text2)"}}>?? {modelo.creditos} créditos</span>
+          <span style={{fontSize:13,color:"var(--text2)"}}>?? {modelo.creditos} crï¿½ditos</span>
 
         </div>
 
@@ -6418,9 +6418,9 @@ function GeradorImagens() {
 
             padding:"8px 12px",background:"rgba(255,255,255,.03)",borderRadius:8,marginBottom:8}}>
 
-            <span style={{fontSize:12,color:"var(--text3)"}}>?? Custo: <strong style={{color:"var(--text2)"}}>{modelo.creditos} créditos</strong></span>
+            <span style={{fontSize:12,color:"var(--text3)"}}>?? Custo: <strong style={{color:"var(--text2)"}}>{modelo.creditos} crï¿½ditos</strong></span>
 
-            <span style={{fontSize:11,color:"var(--text3)"}}>{"˜ R$"+(modelo.creditos*0.023).toFixed(2)}</span>
+            <span style={{fontSize:11,color:"var(--text3)"}}>{"ï¿½ R$"+(modelo.creditos*0.023).toFixed(2)}</span>
 
           </div>
 
@@ -6464,7 +6464,7 @@ function GeradorImagens() {
 
           <div style={{fontSize:11,color:"var(--text3)",textAlign:"center",marginBottom:4}}>
 
-            ?? {modeloAtual} • <a href={resultado} target="_blank" rel="noreferrer" style={{color:"#7C3AED"}}>abrir em tela cheia</a>
+            ?? {modeloAtual} ï¿½ <a href={resultado} target="_blank" rel="noreferrer" style={{color:"#7C3AED"}}>abrir em tela cheia</a>
 
           </div>
 
@@ -6480,7 +6480,7 @@ function GeradorImagens() {
 
               });
 
-              alert("? Vortex aprendeu! Próximas imagens serão ainda melhores.");
+              alert("? Vortex aprendeu! Prï¿½ximas imagens serï¿½o ainda melhores.");
 
             }} style={{fontSize:16,padding:"4px 12px",background:"rgba(123,47,255,.1)",border:"0.5px solid rgba(123,47,255,.3)",borderRadius:8,cursor:"pointer"}}>?? Gostei</button>
 
@@ -6558,7 +6558,7 @@ function GeradorImagens() {
 
 // ------------------------------------------------------
 
-// EDITOR VISUAL DE THUMBNAIL — Fabric.js no browser
+// EDITOR VISUAL DE THUMBNAIL ï¿½ Fabric.js no browser
 
 // ------------------------------------------------------
 
@@ -6596,7 +6596,7 @@ function EditorThumbnail({ imagemUrl, tituloInicial="", onClose }) {
 
     {id:"dark", label:"?? Dark"},
 
-    {id:"cinema", label:"?? Cinemático"},
+    {id:"cinema", label:"?? Cinemï¿½tico"},
 
     {id:"contraste", label:"? Alto Contraste"},
 
@@ -6674,7 +6674,7 @@ function EditorThumbnail({ imagemUrl, tituloInicial="", onClose }) {
 
 
 
-        // Adicionar título inicial
+        // Adicionar tï¿½tulo inicial
 
         if(tituloInicial){
 
@@ -6920,7 +6920,7 @@ function EditorThumbnail({ imagemUrl, tituloInicial="", onClose }) {
 
           <div style={{marginBottom:12}}>
 
-            <label style={{fontSize:11,color:"var(--text3)",display:"block",marginBottom:4}}>TÍTULO</label>
+            <label style={{fontSize:11,color:"var(--text3)",display:"block",marginBottom:4}}>Tï¿½TULO</label>
 
             <input value={titulo} onChange={e=>setTitulo(e.target.value)}
 
@@ -6928,7 +6928,7 @@ function EditorThumbnail({ imagemUrl, tituloInicial="", onClose }) {
 
             <button onClick={adicionarTexto} style={{width:"100%",marginTop:4,background:"#7C3AED",color:"white",border:"none",borderRadius:6,padding:"6px",cursor:"pointer",fontSize:11,fontWeight:600}}>
 
-              + Adicionar Título
+              + Adicionar Tï¿½tulo
 
             </button>
 
@@ -6936,11 +6936,11 @@ function EditorThumbnail({ imagemUrl, tituloInicial="", onClose }) {
 
 
 
-          {/* Subtítulo */}
+          {/* Subtï¿½tulo */}
 
           <div style={{marginBottom:12}}>
 
-            <label style={{fontSize:11,color:"var(--text3)",display:"block",marginBottom:4}}>SUBTÍTULO</label>
+            <label style={{fontSize:11,color:"var(--text3)",display:"block",marginBottom:4}}>SUBTï¿½TULO</label>
 
             <input value={subtitulo} onChange={e=>setSubtitulo(e.target.value)}
 
@@ -6948,7 +6948,7 @@ function EditorThumbnail({ imagemUrl, tituloInicial="", onClose }) {
 
             <button onClick={adicionarSubtitulo} style={{width:"100%",marginTop:4,background:"#0EA5E9",color:"white",border:"none",borderRadius:6,padding:"6px",cursor:"pointer",fontSize:11,fontWeight:600}}>
 
-              + Adicionar Subtítulo
+              + Adicionar Subtï¿½tulo
 
             </button>
 
@@ -7086,9 +7086,9 @@ function EditorThumbnail({ imagemUrl, tituloInicial="", onClose }) {
 
 // --------------------------------------------------------------
 
-// VORTEX STUDIO — Pipeline completo de vídeo IA
+// VORTEX STUDIO ï¿½ Pipeline completo de vï¿½deo IA
 
-// Claude ? ElevenLabs ? FLUX ? Kling = Vídeo único Vortex
+// Claude ? ElevenLabs ? FLUX ? Kling = Vï¿½deo ï¿½nico Vortex
 
 // --------------------------------------------------------------
 
@@ -7114,9 +7114,9 @@ function VortexStudio() {
 
   const ESTILOS = [
 
-    { id:"cinematografico", nome:"?? Cinematográfico", desc:"Dark e dramático" },
+    { id:"cinematografico", nome:"?? Cinematogrï¿½fico", desc:"Dark e dramï¿½tico" },
 
-    { id:"viral",           nome:"?? Viral",           desc:"Vibrante e dinâmico" },
+    { id:"viral",           nome:"?? Viral",           desc:"Vibrante e dinï¿½mico" },
 
     { id:"terror",          nome:"?? Terror",          desc:"Suspense e horror" },
 
@@ -7130,15 +7130,15 @@ function VortexStudio() {
 
   const MOTORES = [
 
-    { id:"wan22_fast",  nome:"? Rápido",      creditos:60,  plano:"starter", desc:"Geração em segundos" },
+    { id:"wan22_fast",  nome:"? Rï¿½pido",      creditos:60,  plano:"starter", desc:"Geraï¿½ï¿½o em segundos" },
 
-    { id:"kling3_std",  nome:"?? Padrão",      creditos:90,  plano:"creator", desc:"Alta qualidade 4K" },
+    { id:"kling3_std",  nome:"?? Padrï¿½o",      creditos:90,  plano:"creator", desc:"Alta qualidade 4K" },
 
     { id:"kling3_pro",  nome:"?? Pro",         creditos:150, plano:"pro",     desc:"Movimentos ultra naturais" },
 
     { id:"luma_ray3",   nome:"?? Premium",     creditos:155, plano:"pro",     desc:"HDR + cores reais" },
 
-    { id:"veo31_fast",  nome:"?? Ultra",       creditos:185, plano:"elite",   desc:"Máxima qualidade possível" },
+    { id:"veo31_fast",  nome:"?? Ultra",       creditos:185, plano:"elite",   desc:"Mï¿½xima qualidade possï¿½vel" },
 
   ];
 
@@ -7150,11 +7150,11 @@ function VortexStudio() {
 
     { icon:"??", nome:"Criando roteiro",      desc:"Desenvolvendo narrativa e cenas..." },
 
-    { icon:"???", nome:"Gerando narração",     desc:"Sintetizando voz profissional..." },
+    { icon:"???", nome:"Gerando narraï¿½ï¿½o",     desc:"Sintetizando voz profissional..." },
 
     { icon:"??", nome:"Renderizando cena",    desc:"Construindo identidade visual..." },
 
-    { icon:"??", nome:"Animando vídeo",       desc:"Dando vida à cena final..." },
+    { icon:"??", nome:"Animando vï¿½deo",       desc:"Dando vida ï¿½ cena final..." },
 
   ];
 
@@ -7166,7 +7166,7 @@ function VortexStudio() {
 
   async function criar() {
 
-    if(!tema.trim()) { setErro("Descreva o tema do seu vídeo"); return; }
+    if(!tema.trim()) { setErro("Descreva o tema do seu vï¿½deo"); return; }
 
     setLoading(true);
 
@@ -7236,7 +7236,7 @@ function VortexStudio() {
 
       clearInterval(timer);
 
-      setErro(e.message || "Erro ao criar vídeo. Tente novamente.");
+      setErro(e.message || "Erro ao criar vï¿½deo. Tente novamente.");
 
       setEtapaAtual(0);
 
@@ -7262,19 +7262,19 @@ function VortexStudio() {
 
         <h1 className="page-title">Vortex <em>Studio</em></h1>
 
-        <p className="page-sub">Descreva sua ideia. O Vortex cria o vídeo completo — roteiro, voz, imagem e movimento.</p>
+        <p className="page-sub">Descreva sua ideia. O Vortex cria o vï¿½deo completo ï¿½ roteiro, voz, imagem e movimento.</p>
 
       </div>
 
 
 
-      {/* Input principal — grande e limpo */}
+      {/* Input principal ï¿½ grande e limpo */}
 
       {!loading && !resultado && (
 
         <div className="card" style={{marginBottom:12}}>
 
-          <label className="label" style={{fontSize:13}}>Qual é a ideia do seu vídeo?</label>
+          <label className="label" style={{fontSize:13}}>Qual ï¿½ a ideia do seu vï¿½deo?</label>
 
           <textarea className="input" rows={3}
 
@@ -7324,7 +7324,7 @@ function VortexStudio() {
 
               <select className="input" value={nicho} onChange={e=>setNicho(e.target.value)}>
 
-                {["geral","terror","gaming","finanças","fitness","tech","lifestyle","anime","motivacional"].map(n=>(
+                {["geral","terror","gaming","finanï¿½as","fitness","tech","lifestyle","anime","motivacional"].map(n=>(
 
                   <option key={n} value={n}>{n.charAt(0).toUpperCase()+n.slice(1)}</option>
 
@@ -7342,7 +7342,7 @@ function VortexStudio() {
 
                 {MOTORES.map(m=>(
 
-                  <option key={m.id} value={m.id}>{m.nome} — {m.creditos}cr</option>
+                  <option key={m.id} value={m.id}>{m.nome} ï¿½ {m.creditos}cr</option>
 
                 ))}
 
@@ -7362,7 +7362,7 @@ function VortexStudio() {
 
             <span style={{fontSize:12,color:"var(--text3)"}}>
 
-              ?? <strong style={{color:"var(--text)"}}>{motorAtual.creditos} créditos</strong> · {motorAtual.desc}
+              ?? <strong style={{color:"var(--text)"}}>{motorAtual.creditos} crï¿½ditos</strong> ï¿½ {motorAtual.desc}
 
             </span>
 
@@ -7398,7 +7398,7 @@ function VortexStudio() {
 
               border:"none",fontSize:14,padding:"14px",fontWeight:700}}>
 
-            ?? Criar Vídeo — {motorAtual.creditos} créditos
+            ?? Criar Vï¿½deo ï¿½ {motorAtual.creditos} crï¿½ditos
 
           </button>
 
@@ -7420,13 +7420,13 @@ function VortexStudio() {
 
             marginBottom:8,color:"var(--text)"}}>
 
-            Vortex Studio está criando...
+            Vortex Studio estï¿½ criando...
 
           </div>
 
           <div style={{fontSize:13,color:"var(--text3)",marginBottom:24}}>
 
-            Isso pode levar até 1 minuto. Não feche essa tela.
+            Isso pode levar atï¿½ 1 minuto. Nï¿½o feche essa tela.
 
           </div>
 
@@ -7500,7 +7500,7 @@ function VortexStudio() {
 
           <div style={{fontWeight:800,marginBottom:12,fontSize:16,color:"var(--text)"}}>
 
-            ? Seu vídeo está pronto!
+            ? Seu vï¿½deo estï¿½ pronto!
 
           </div>
 
@@ -7516,7 +7516,7 @@ function VortexStudio() {
 
               style={{textDecoration:"none",textAlign:"center",fontSize:13}}>
 
-              ?? Baixar vídeo
+              ?? Baixar vï¿½deo
 
             </a>
 
@@ -7556,45 +7556,45 @@ function VortexStudio() {
 
 function GeradorVideos() {
 
-  // MODELOS de vídeo
+  // MODELOS de vï¿½deo
 
   const MODELOS_VIDEO = [
 
-    { id:"studio",     nome:"? Vortex Studio",  tag:"Exclusivo",       creditos:90, cor:"#9333ea", api:"studio", plano_min:"creator", desc:"Pipeline completo — roteiro, voz, imagem e vídeo", aviso:null, studio:true },
+    { id:"studio",     nome:"? Vortex Studio",  tag:"Exclusivo",       creditos:90, cor:"#9333ea", api:"studio", plano_min:"creator", desc:"Pipeline completo ï¿½ roteiro, voz, imagem e vï¿½deo", aviso:null, studio:true },
 
-    { id:"hf_ltx",     nome:"?? LTX-Video",      tag:"Grátis",          creditos:0,  cor:"#F59E0B", api:"hf",  free:true,   plano_min:"free",    desc:"HuggingFace • Open source",         aviso:null },
+    { id:"hf_ltx",     nome:"?? LTX-Video",      tag:"Grï¿½tis",          creditos:0,  cor:"#F59E0B", api:"hf",  free:true,   plano_min:"free",    desc:"HuggingFace ï¿½ Open source",         aviso:null },
 
-    { id:"wan26_fast", nome:"? WAN 2.6 Fast",    tag:"Open source",     creditos:5,  cor:"#7C3AED", api:"fal", fal_model:"fal-ai/wan/t2v-1.3b",               plano_min:"starter", desc:"Alibaba • Rápido",           aviso:null },
+    { id:"wan26_fast", nome:"? WAN 2.6 Fast",    tag:"Open source",     creditos:5,  cor:"#7C3AED", api:"fal", fal_model:"fal-ai/wan/t2v-1.3b",               plano_min:"starter", desc:"Alibaba ï¿½ Rï¿½pido",           aviso:null },
 
-    { id:"hailuo23",   nome:"?? Hailuo 2.3",      tag:"Custo-benefício", creditos:10, cor:"#8B5CF6", api:"fal", fal_model:"fal-ai/minimax/video-01-live",       plano_min:"starter", desc:"MiniMax • menos de 30s",    aviso:null },
+    { id:"hailuo23",   nome:"?? Hailuo 2.3",      tag:"Custo-benefï¿½cio", creditos:10, cor:"#8B5CF6", api:"fal", fal_model:"fal-ai/minimax/video-01-live",       plano_min:"starter", desc:"MiniMax ï¿½ menos de 30s",    aviso:null },
 
-    { id:"hunyuan_vid",nome:"?? Hunyuan Video",   tag:"Open source",     creditos:10, cor:"#EF4444", api:"fal", fal_model:"fal-ai/hunyuan-video",              plano_min:"starter", desc:"Tencent • 1080p",           aviso:null },
+    { id:"hunyuan_vid",nome:"?? Hunyuan Video",   tag:"Open source",     creditos:10, cor:"#EF4444", api:"fal", fal_model:"fal-ai/hunyuan-video",              plano_min:"starter", desc:"Tencent ï¿½ 1080p",           aviso:null },
 
-    { id:"wan26_hd",   nome:"?? WAN 2.6 HD",      tag:"Alta qualidade",  creditos:15, cor:"#7C3AED", api:"fal", fal_model:"fal-ai/wan/t2v-5b-720p",            plano_min:"creator", desc:"Alibaba • 720p",            aviso:null },
+    { id:"wan26_hd",   nome:"?? WAN 2.6 HD",      tag:"Alta qualidade",  creditos:15, cor:"#7C3AED", api:"fal", fal_model:"fal-ai/wan/t2v-5b-720p",            plano_min:"creator", desc:"Alibaba ï¿½ 720p",            aviso:null },
 
-    { id:"seedance2",  nome:"?? Seedance 2.0",     tag:"#1 sem áudio",   creditos:15, cor:"#F59E0B", api:"fal", fal_model:"fal-ai/bytedance/seedance-1-lite",  plano_min:"creator", desc:"ByteDance • Top movement",  aviso:null },
+    { id:"seedance2",  nome:"?? Seedance 2.0",     tag:"#1 sem ï¿½udio",   creditos:15, cor:"#F59E0B", api:"fal", fal_model:"fal-ai/bytedance/seedance-1-lite",  plano_min:"creator", desc:"ByteDance ï¿½ Top movement",  aviso:null },
 
-    { id:"minimax_vid",nome:"?? Minimax Video",    tag:"Personagens",     creditos:15, cor:"#EC4899", api:"fal", fal_model:"fal-ai/minimax-video/video-01",     plano_min:"creator", desc:"MiniMax • Personagens",     aviso:null },
+    { id:"minimax_vid",nome:"?? Minimax Video",    tag:"Personagens",     creditos:15, cor:"#EC4899", api:"fal", fal_model:"fal-ai/minimax-video/video-01",     plano_min:"creator", desc:"MiniMax ï¿½ Personagens",     aviso:null },
 
-    { id:"kling3_std", nome:"?? Kling 3.0",        tag:"4K • 60fps",      creditos:20, cor:"#0EA5E9", api:"fal", fal_model:"fal-ai/kling-video/v1.6/standard/text-to-video", plano_min:"creator", desc:"Kuaishou • 4K",  aviso:null },
+    { id:"kling3_std", nome:"?? Kling 3.0",        tag:"4K ï¿½ 60fps",      creditos:20, cor:"#0EA5E9", api:"fal", fal_model:"fal-ai/kling-video/v1.6/standard/text-to-video", plano_min:"creator", desc:"Kuaishou ï¿½ 4K",  aviso:null },
 
-    { id:"luma_dream", nome:"?? Luma Dream",       tag:"Surreal",         creditos:20, cor:"#10B981", api:"fal", fal_model:"fal-ai/luma-dream-machine",         plano_min:"creator", desc:"Luma AI • Cenas surreais",  aviso:null },
+    { id:"luma_dream", nome:"?? Luma Dream",       tag:"Surreal",         creditos:20, cor:"#10B981", api:"fal", fal_model:"fal-ai/luma-dream-machine",         plano_min:"creator", desc:"Luma AI ï¿½ Cenas surreais",  aviso:null },
 
-    { id:"happyhorse", nome:"?? HappyHorse 1.0",   tag:"#1 mundial",      creditos:30, cor:"#f472b6", api:"fal", fal_model:"fal-ai/alibaba/happyhorse",         plano_min:"pro",     desc:"Alibaba • lip-sync 7 idiomas", aviso:null },
+    { id:"happyhorse", nome:"?? HappyHorse 1.0",   tag:"#1 mundial",      creditos:30, cor:"#f472b6", api:"fal", fal_model:"fal-ai/alibaba/happyhorse",         plano_min:"pro",     desc:"Alibaba ï¿½ lip-sync 7 idiomas", aviso:null },
 
-    { id:"luma_ray3",  nome:"?? Luma Ray 3",       tag:"HDR 16-bit",      creditos:35, cor:"#10B981", api:"fal", fal_model:"fal-ai/luma-dream-machine/ray-3",   plano_min:"pro",     desc:"Luma AI • Primeiro HDR",    aviso:null },
+    { id:"luma_ray3",  nome:"?? Luma Ray 3",       tag:"HDR 16-bit",      creditos:35, cor:"#10B981", api:"fal", fal_model:"fal-ai/luma-dream-machine/ray-3",   plano_min:"pro",     desc:"Luma AI ï¿½ Primeiro HDR",    aviso:null },
 
-    { id:"kling3_pro", nome:"?? Kling 3.0 Pro",    tag:"Top • 4K 60fps",  creditos:40, cor:"#F59E0B", api:"fal", fal_model:"fal-ai/kling-video/v1.6/pro/text-to-video", plano_min:"pro",  desc:"Kuaishou • AI Director",  aviso:null },
+    { id:"kling3_pro", nome:"?? Kling 3.0 Pro",    tag:"Top ï¿½ 4K 60fps",  creditos:40, cor:"#F59E0B", api:"fal", fal_model:"fal-ai/kling-video/v1.6/pro/text-to-video", plano_min:"pro",  desc:"Kuaishou ï¿½ AI Director",  aviso:null },
 
-    { id:"runway_gen4",nome:"?? Runway Gen-4.5",   tag:"Melhor controle", creditos:35, cor:"#74AA9C", api:"fal", fal_model:"fal-ai/runway/gen-4",               plano_min:"pro",     desc:"Runway • Motion brushes",   aviso:null },
+    { id:"runway_gen4",nome:"?? Runway Gen-4.5",   tag:"Melhor controle", creditos:35, cor:"#74AA9C", api:"fal", fal_model:"fal-ai/runway/gen-4",               plano_min:"pro",     desc:"Runway ï¿½ Motion brushes",   aviso:null },
 
-    { id:"veo31_lite", nome:"? Veo 3.1 Lite",     tag:"Google",          creditos:15, cor:"#9d5cff", api:"fal", fal_model:"fal-ai/veo3/lite",                  plano_min:"pro",     desc:"Google • áudio nativo",     aviso:null },
+    { id:"veo31_lite", nome:"? Veo 3.1 Lite",     tag:"Google",          creditos:15, cor:"#9d5cff", api:"fal", fal_model:"fal-ai/veo3/lite",                  plano_min:"pro",     desc:"Google ï¿½ ï¿½udio nativo",     aviso:null },
 
-    { id:"sora2",      nome:"?? Sora 2 Pro",       tag:"OpenAI",          creditos:120,cor:"#74AA9C", api:"fal", fal_model:"fal-ai/sora",                       plano_min:"elite",   desc:"OpenAI • API até set/2026", aviso:"?? Consome 120 créditos por vídeo." },
+    { id:"sora2",      nome:"?? Sora 2 Pro",       tag:"OpenAI",          creditos:120,cor:"#74AA9C", api:"fal", fal_model:"fal-ai/sora",                       plano_min:"elite",   desc:"OpenAI ï¿½ API atï¿½ set/2026", aviso:"?? Consome 120 crï¿½ditos por vï¿½deo." },
 
-    { id:"veo31_fast", nome:"?? Veo 3.1 Fast",     tag:"Google Premium",  creditos:160,cor:"#EF4444", api:"fal", fal_model:"fal-ai/veo3/fast",                  plano_min:"elite",   desc:"Google • 4K + áudio",       aviso:"?? Consome 160 créditos por vídeo." },
+    { id:"veo31_fast", nome:"?? Veo 3.1 Fast",     tag:"Google Premium",  creditos:160,cor:"#EF4444", api:"fal", fal_model:"fal-ai/veo3/fast",                  plano_min:"elite",   desc:"Google ï¿½ 4K + ï¿½udio",       aviso:"?? Consome 160 crï¿½ditos por vï¿½deo." },
 
-    { id:"veo31",      nome:"? Veo 3.1 Quality",  tag:"Melhor do mundo", creditos:325,cor:"#f72faa", api:"fal", fal_model:"fal-ai/veo3",                       plano_min:"elite",   desc:"Google • Máxima qualidade", aviso:"?? Consome 325 créditos por vídeo." },
+    { id:"veo31",      nome:"? Veo 3.1 Quality",  tag:"Melhor do mundo", creditos:325,cor:"#f72faa", api:"fal", fal_model:"fal-ai/veo3",                       plano_min:"elite",   desc:"Google ï¿½ Mï¿½xima qualidade", aviso:"?? Consome 325 crï¿½ditos por vï¿½deo." },
 
   ];
 
@@ -7636,7 +7636,7 @@ function GeradorVideos() {
 
     setLoading(true); setErro(""); setResultado(null); setProgresso(0);
 
-    const msgs = ["?? Enviando prompt...","?? IA gerando vídeo...","?? Renderizando...","?? Finalizando..."];
+    const msgs = ["?? Enviando prompt...","?? IA gerando vï¿½deo...","?? Renderizando...","?? Finalizando..."];
 
     let mi = 0; setProgMsg(msgs[0]); setProgresso(10);
 
@@ -7652,7 +7652,7 @@ function GeradorVideos() {
 
     try {
 
-      // Se for Vortex Studio — pipeline completo
+      // Se for Vortex Studio ï¿½ pipeline completo
 
       if(modelo.studio) {
 
@@ -7700,7 +7700,7 @@ function GeradorVideos() {
 
       clearInterval(tick);
 
-      setErro(e.message || "Erro ao gerar vídeo");
+      setErro(e.message || "Erro ao gerar vï¿½deo");
 
     } finally {
 
@@ -7718,9 +7718,9 @@ function GeradorVideos() {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criação</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criaï¿½ï¿½o</div>
 
-        <h1 className="page-title">Gerador de <em>Vídeo</em></h1>
+        <h1 className="page-title">Gerador de <em>Vï¿½deo</em></h1>
 
         <p className="page-sub">Escolha a IA, descreva a cena e gere em segundos</p>
 
@@ -7810,7 +7810,7 @@ function GeradorVideos() {
 
               onChange={e=>setPrompt(e.target.value)}
 
-              placeholder="Ex: Uma floresta densa à noite, neblina surgindo entre as árvores..."
+              placeholder="Ex: Uma floresta densa ï¿½ noite, neblina surgindo entre as ï¿½rvores..."
 
               style={{resize:"vertical",marginBottom:10}}/>
 
@@ -7820,7 +7820,7 @@ function GeradorVideos() {
 
               <div style={{flex:1}}>
 
-                <label className="label">Duração</label>
+                <label className="label">Duraï¿½ï¿½o</label>
 
                 <div style={{display:"flex",gap:4}}>
 
@@ -7888,13 +7888,13 @@ function GeradorVideos() {
 
                 <span style={{fontSize:12,color:"var(--text3)"}}>
 
-                  {"?? Custo: "}<strong style={{color:"var(--text)"}}>{modelo.creditos+" créditos"}</strong>
+                  {"?? Custo: "}<strong style={{color:"var(--text)"}}>{modelo.creditos+" crï¿½ditos"}</strong>
 
                 </span>
 
                 <span style={{fontSize:11,color:modelo.creditos>50?"#fbbf24":"var(--text3)"}}>
 
-                  {modelo.creditos>100?"?? Alto consumo":modelo.creditos>30?"?? Moderado":"? Econômico"}
+                  {modelo.creditos>100?"?? Alto consumo":modelo.creditos>30?"?? Moderado":"? Econï¿½mico"}
 
                 </span>
 
@@ -7916,7 +7916,7 @@ function GeradorVideos() {
 
                   color:!prompt.trim()?"var(--text3)":"white",border:"none"}}>
 
-                {"?? Gerar Vídeo — "+modelo.creditos+" créditos"}
+                {"?? Gerar Vï¿½deo ï¿½ "+modelo.creditos+" crï¿½ditos"}
 
               </button>
 
@@ -7956,7 +7956,7 @@ function GeradorVideos() {
 
             <div className="card">
 
-              <div style={{fontWeight:700,marginBottom:12,color:"#7C3AED"}}>{"? Vídeo gerado!"}</div>
+              <div style={{fontWeight:700,marginBottom:12,color:"#7C3AED"}}>{"? Vï¿½deo gerado!"}</div>
 
               <video controls style={{width:"100%",borderRadius:10,background:"#000"}} src={resultado}/>
 
@@ -8006,17 +8006,17 @@ function ClonadorVoz() {
 
   const VOZES=[
 
-    {id:"onwK4e9ZLuTAKqWW03F9",nome:"VORTEX",icon:"??",desc:"Voz oficial do Vortex — dramática e envolvente",estilo:"Épico"},
+    {id:"onwK4e9ZLuTAKqWW03F9",nome:"VORTEX",icon:"??",desc:"Voz oficial do Vortex ï¿½ dramï¿½tica e envolvente",estilo:"ï¿½pico"},
 
-    {id:"pNInz6obpgDQGcFmaJgB",nome:"Adam",icon:"???",desc:"Grave e autoritário — ideal para terror e suspense",estilo:"Grave"},
+    {id:"pNInz6obpgDQGcFmaJgB",nome:"Adam",icon:"???",desc:"Grave e autoritï¿½rio ï¿½ ideal para terror e suspense",estilo:"Grave"},
 
-    {id:"TX3LPaxmHKxFdv7VOQHJ",nome:"Liam",icon:"?",desc:"Jovem e energético — perfeito para gaming",estilo:"Energético"},
+    {id:"TX3LPaxmHKxFdv7VOQHJ",nome:"Liam",icon:"?",desc:"Jovem e energï¿½tico ï¿½ perfeito para gaming",estilo:"Energï¿½tico"},
 
-    {id:"ErXwobaYiN019PkySvjV",nome:"Antoni",icon:"??",desc:"Tom suave e narrativo — ótimo para storytelling",estilo:"Narrativo"},
+    {id:"ErXwobaYiN019PkySvjV",nome:"Antoni",icon:"??",desc:"Tom suave e narrativo ï¿½ ï¿½timo para storytelling",estilo:"Narrativo"},
 
-    {id:"VR6AewLTigWG4xSOukaG",nome:"Arnold",icon:"??",desc:"Imponente e confiante — autoridade máxima",estilo:"Imponente"},
+    {id:"VR6AewLTigWG4xSOukaG",nome:"Arnold",icon:"??",desc:"Imponente e confiante ï¿½ autoridade mï¿½xima",estilo:"Imponente"},
 
-    {id:"EXAVITQu4vr4xnSDxMaL",nome:"Bella",icon:"??",desc:"Feminina e carismática — engajamento alto",estilo:"Carismático"},
+    {id:"EXAVITQu4vr4xnSDxMaL",nome:"Bella",icon:"??",desc:"Feminina e carismï¿½tica ï¿½ engajamento alto",estilo:"Carismï¿½tico"},
 
   ];
 
@@ -8084,17 +8084,17 @@ function ClonadorVoz() {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criação</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>IA & Criaï¿½ï¿½o</div>
 
-        <h1 className="page-title">Narração com IA</h1>
+        <h1 className="page-title">Narraï¿½ï¿½o com IA</h1>
 
-        <p className="page-sub">Transforme seu roteiro em narração profissional</p>
+        <p className="page-sub">Transforme seu roteiro em narraï¿½ï¿½o profissional</p>
 
       </div>
 
 
 
-      {/* Player de demo de narração */}
+      {/* Player de demo de narraï¿½ï¿½o */}
 
       <div style={{marginBottom:"1rem"}}>
 
@@ -8102,7 +8102,7 @@ function ClonadorVoz() {
 
           <span style={{width:6,height:6,borderRadius:"50%",background:"#7C3AED",display:"inline-block"}}/>
 
-          Estilos de narração — clique para usar o texto
+          Estilos de narraï¿½ï¿½o ï¿½ clique para usar o texto
 
         </div>
 
@@ -8110,13 +8110,13 @@ function ClonadorVoz() {
 
           {[
 
-            {icon:"??",cor:"#ef4444",bg:"linear-gradient(135deg,#1a0000,#3d0000)",titulo:"Terror & Suspense",sub:"Voz grave e dramática",exemplo:"Ninguém sabia o que estava prestes a acontecer naquela noite. O silêncio era ensurdecedor..."},
+            {icon:"??",cor:"#ef4444",bg:"linear-gradient(135deg,#1a0000,#3d0000)",titulo:"Terror & Suspense",sub:"Voz grave e dramï¿½tica",exemplo:"Ninguï¿½m sabia o que estava prestes a acontecer naquela noite. O silï¿½ncio era ensurdecedor..."},
 
-            {icon:"?",cor:"#3b82f6",bg:"linear-gradient(135deg,#00051a,#001040)",titulo:"Gaming Hype",sub:"Energético e rápido",exemplo:"Esse glitch quebrou o jogo INTEIRO! Ninguém consegue passar desse nível... até agora!"},
+            {icon:"?",cor:"#3b82f6",bg:"linear-gradient(135deg,#00051a,#001040)",titulo:"Gaming Hype",sub:"Energï¿½tico e rï¿½pido",exemplo:"Esse glitch quebrou o jogo INTEIRO! Ninguï¿½m consegue passar desse nï¿½vel... atï¿½ agora!"},
 
-            {icon:"??",cor:"#f59e0b",bg:"linear-gradient(135deg,#1a0d00,#3d1f00)",titulo:"Finanças",sub:"Autoritário e confiante",exemplo:"Esse ativo vai triplicar em 2025. Aqui está o motivo que ninguém está te contando..."},
+            {icon:"??",cor:"#f59e0b",bg:"linear-gradient(135deg,#1a0d00,#3d1f00)",titulo:"Finanï¿½as",sub:"Autoritï¿½rio e confiante",exemplo:"Esse ativo vai triplicar em 2025. Aqui estï¿½ o motivo que ninguï¿½m estï¿½ te contando..."},
 
-            {icon:"??",cor:"#a855f7",bg:"linear-gradient(135deg,#0d0020,#2d0057)",titulo:"Storytelling",sub:"Narrativo e envolvente",exemplo:"Era uma noite fria quando tudo mudou para sempre. Eu não sabia que aquela seria minha última chance..."},
+            {icon:"??",cor:"#a855f7",bg:"linear-gradient(135deg,#0d0020,#2d0057)",titulo:"Storytelling",sub:"Narrativo e envolvente",exemplo:"Era uma noite fria quando tudo mudou para sempre. Eu nï¿½o sabia que aquela seria minha ï¿½ltima chance..."},
 
           ].map((d,i)=>(
 
@@ -8222,9 +8222,9 @@ function ClonadorVoz() {
 
         <div style={{background:"#7C3AED12",border:"1px solid #7C3AED30",borderRadius:8,padding:"8px 12px",marginBottom:12,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
 
-          <span style={{fontSize:13,color:"#7C3AED",fontWeight:600}}>{voz.icon} {voz.nome} • {voz.estilo}</span>
+          <span style={{fontSize:13,color:"#7C3AED",fontWeight:600}}>{voz.icon} {voz.nome} ï¿½ {voz.estilo}</span>
 
-          <span style={{fontSize:13,color:"var(--text2)"}}>?? {Math.ceil(texto.length/100)} créditos</span>
+          <span style={{fontSize:13,color:"var(--text2)"}}>?? {Math.ceil(texto.length/100)} crï¿½ditos</span>
 
         </div>
 
@@ -8246,13 +8246,13 @@ function ClonadorVoz() {
 
 
 
-      {/* Player de áudio */}
+      {/* Player de ï¿½udio */}
 
       {resultado&&(
 
         <div className="card">
 
-          <div style={{fontWeight:700,marginBottom:16,color:"#7C3AED"}}>? Narração pronta!</div>
+          <div style={{fontWeight:700,marginBottom:16,color:"#7C3AED"}}>? Narraï¿½ï¿½o pronta!</div>
 
 
 
@@ -8308,7 +8308,7 @@ function ClonadorVoz() {
 
               style={{padding:"10px",background:"var(--surface2)",border:"1px solid var(--border)",borderRadius:8,cursor:"pointer",fontSize:14}}>
 
-              ?? Nova narração
+              ?? Nova narraï¿½ï¿½o
 
             </button>
 
@@ -8330,21 +8330,21 @@ function GeradorMusica() {
 
   const ESTILOS=[
 
-    {id:"dark_electronic",label:"?? Dark Electronic",desc:"Tensão — terror/thriller",provider:"elevenlabs"},
+    {id:"dark_electronic",label:"?? Dark Electronic",desc:"Tensï¿½o ï¿½ terror/thriller",provider:"elevenlabs"},
 
-    {id:"cinematic",label:"?? Cinematográfico",desc:"Épico — trailers",provider:"elevenlabs"},
+    {id:"cinematic",label:"?? Cinematogrï¿½fico",desc:"ï¿½pico ï¿½ trailers",provider:"elevenlabs"},
 
-    {id:"lofi_chill",label:"?? Lo-fi Chill",desc:"Relaxante — lifestyle",provider:"elevenlabs"},
+    {id:"lofi_chill",label:"?? Lo-fi Chill",desc:"Relaxante ï¿½ lifestyle",provider:"elevenlabs"},
 
-    {id:"hype_trap",label:"? Hype Trap",desc:"Energia — gaming",provider:"elevenlabs"},
+    {id:"hype_trap",label:"? Hype Trap",desc:"Energia ï¿½ gaming",provider:"elevenlabs"},
 
-    {id:"ambient",label:"?? Ambient",desc:"Atmosférico — ASMR",provider:"elevenlabs"},
+    {id:"ambient",label:"?? Ambient",desc:"Atmosfï¿½rico ï¿½ ASMR",provider:"elevenlabs"},
 
-    {id:"horror",label:"?? Horror",desc:"Assustador — true crime",provider:"elevenlabs"},
+    {id:"horror",label:"?? Horror",desc:"Assustador ï¿½ true crime",provider:"elevenlabs"},
 
-    {id:"suno",label:"?? Suno AI",desc:"Música completa com melodia",provider:"suno"},
+    {id:"suno",label:"?? Suno AI",desc:"Mï¿½sica completa com melodia",provider:"suno"},
 
-    {id:"udio",label:"?? Udio",desc:"Música + voz cantada",provider:"udio"},
+    {id:"udio",label:"?? Udio",desc:"Mï¿½sica + voz cantada",provider:"udio"},
 
   ];
 
@@ -8380,7 +8380,7 @@ function GeradorMusica() {
 
     <div className="page">
 
-      <div className="page-header"><div className="eyebrow"><div className="eyebrow-dot"/>IA & Criação</div><h1 className="page-title">Gerador de <em>Música</em></h1><p className="page-sub">Trilhas com ElevenLabs, Suno AI e Udio.</p></div>
+      <div className="page-header"><div className="eyebrow"><div className="eyebrow-dot"/>IA & Criaï¿½ï¿½o</div><h1 className="page-title">Gerador de <em>Mï¿½sica</em></h1><p className="page-sub">Trilhas com ElevenLabs, Suno AI e Udio.</p></div>
 
       <div className="card" style={{marginBottom:"1rem"}}>
 
@@ -8388,13 +8388,13 @@ function GeradorMusica() {
 
         <div className="field"><label className="label">Descreva <span style={{color:"var(--text3)",fontSize:10}}>(opcional)</span></label><input className="input" placeholder="Ex: suspense com violinos pesados..." value={prompt} onChange={e=>setPrompt(e.target.value)} disabled={loading}/></div>
 
-        <div className="field"><label className="label">Duração</label><div className="chips">{[5,10,15,22].map(d=><button key={d} className={"chip "+(duracao===d?"active":"")} onClick={()=>setDuracao(d)} disabled={loading}>{d}s</button>)}</div></div>
+        <div className="field"><label className="label">Duraï¿½ï¿½o</label><div className="chips">{[5,10,15,22].map(d=><button key={d} className={"chip "+(duracao===d?"active":"")} onClick={()=>setDuracao(d)} disabled={loading}>{d}s</button>)}</div></div>
 
         {loading&&<div style={{marginBottom:12}}><div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:"var(--text3)",marginBottom:4}}><span>?? Compondo...</span><span>{Math.round(progresso)}%</span></div><div style={{height:6,background:"rgba(123,47,255,.1)",borderRadius:99,overflow:"hidden"}}><div style={{height:"100%",width:progresso+"%",background:"linear-gradient(90deg,#7b2fff,#f472b6)",borderRadius:99,transition:"width .4s"}}/></div></div>}
 
         {erro&&<div style={{color:"#f87171",fontSize:13,marginBottom:8}}>?? {erro}</div>}
 
-        <button className="btn btn-full" onClick={gerar} disabled={loading}>{loading?"? Compondo...":"?? Gerar Música — 3 créditos"}</button>
+        <button className="btn btn-full" onClick={gerar} disabled={loading}>{loading?"? Compondo...":"?? Gerar Mï¿½sica ï¿½ 3 crï¿½ditos"}</button>
 
       </div>
 
@@ -8402,7 +8402,7 @@ function GeradorMusica() {
 
       <div className="card">
 
-        <div className="card-title" style={{marginBottom:12}}>? Música gerada!</div>
+        <div className="card-title" style={{marginBottom:12}}>? Mï¿½sica gerada!</div>
 
         <audio src={resultado} controls style={{width:"100%",marginBottom:10}}/>
 
@@ -8502,13 +8502,13 @@ function ScoreViral() {
 
       {key:"hook",label:"Hook",icon:"??",color:"#f472b6"},
 
-      {key:"retencao",label:"Retenção",icon:"???",color:"#22d3ee"},
+      {key:"retencao",label:"Retenï¿½ï¿½o",icon:"???",color:"#22d3ee"},
 
-      {key:"emocao",label:"Emoção",icon:"??",color:"#f87171"},
+      {key:"emocao",label:"Emoï¿½ï¿½o",icon:"??",color:"#f87171"},
 
       {key:"shares",label:"Shares",icon:"??",color:"#34d399"},
 
-      {key:"comentario",label:"Comentários",icon:"??",color:"#fbbf24"},
+      {key:"comentario",label:"Comentï¿½rios",icon:"??",color:"#fbbf24"},
 
     ];
 
@@ -8534,7 +8534,7 @@ function ScoreViral() {
 
     });
 
-    const mediaMatch=txt.match(/média[^0-9]*(\d+(?:\.\d+)?)/i)||txt.match(/score[^0-9]*(\d+(?:\.\d+)?)/i)||txt.match(/MÉDIA[^0-9]*(\d+(?:\.\d+)?)/i);
+    const mediaMatch=txt.match(/mï¿½dia[^0-9]*(\d+(?:\.\d+)?)/i)||txt.match(/score[^0-9]*(\d+(?:\.\d+)?)/i)||txt.match(/Mï¿½DIA[^0-9]*(\d+(?:\.\d+)?)/i);
 
     const media=mediaMatch?parseFloat(mediaMatch[1]):scores.length>0?scores.reduce((a,b)=>a+b.valor,0)/scores.length:0;
 
@@ -8558,11 +8558,11 @@ function ScoreViral() {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>Análise</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>Anï¿½lise</div>
 
         <h1 className="page-title">Score <em>Viral</em></h1>
 
-        <p className="page-sub">Analise o potencial do seu roteiro em 5 dimensões.</p>
+        <p className="page-sub">Analise o potencial do seu roteiro em 5 dimensï¿½es.</p>
 
         <div style={{display:"inline-flex",alignItems:"center",gap:6,marginTop:6,
 
@@ -8572,7 +8572,7 @@ function ScoreViral() {
 
           <span style={{fontSize:12}}>?</span>
 
-          <span style={{fontSize:11,color:"#34d399",fontWeight:600}}>Grátis e ilimitado — use sem créditos</span>
+          <span style={{fontSize:11,color:"#34d399",fontWeight:600}}>Grï¿½tis e ilimitado ï¿½ use sem crï¿½ditos</span>
 
         </div>
 
@@ -8596,7 +8596,7 @@ function ScoreViral() {
 
         <div style={{fontSize:11,color:"var(--text3)",marginBottom:10}}>
 
-          {roteiro.length} caracteres · ~{Math.ceil(roteiro.split(" ").length/2)} seg de fala
+          {roteiro.length} caracteres ï¿½ ~{Math.ceil(roteiro.split(" ").length/2)} seg de fala
 
         </div>
 
@@ -8604,7 +8604,7 @@ function ScoreViral() {
 
         <button className="btn btn-full" onClick={analisar} disabled={loading||!roteiro.trim()}>
 
-          {loading?<><div className="spinner"/>Analisando com IA...</>:"? Analisar Score Viral — Grátis 8"}
+          {loading?<><div className="spinner"/>Analisando com IA...</>:"? Analisar Score Viral ï¿½ Grï¿½tis 8"}
 
         </button>
 
@@ -8638,13 +8638,13 @@ function ScoreViral() {
 
 
 
-          {/* Dimensões */}
+          {/* Dimensï¿½es */}
 
           {sc.dims.length>0&&(
 
             <div className="card" style={{marginBottom:12}}>
 
-              <div className="card-title" style={{marginBottom:12}}>?? 5 Dimensões</div>
+              <div className="card-title" style={{marginBottom:12}}>?? 5 Dimensï¿½es</div>
 
               {sc.dims.map((d,i)=>(
 
@@ -8680,7 +8680,7 @@ function ScoreViral() {
 
           <div className="card" style={{marginBottom:12}}>
 
-            <div className="card-title" style={{marginBottom:10}}>?? Análise completa</div>
+            <div className="card-title" style={{marginBottom:10}}>?? Anï¿½lise completa</div>
 
             <div style={{whiteSpace:"pre-wrap",fontSize:13,lineHeight:1.8,color:"var(--text2)"}}>{sc.txt}</div>
 
@@ -8688,7 +8688,7 @@ function ScoreViral() {
 
 
 
-          {/* Feedback cérebro */}
+          {/* Feedback cï¿½rebro */}
 
           {!feedbackDado&&(
 
@@ -8696,7 +8696,7 @@ function ScoreViral() {
 
               <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
 
-                <span style={{fontSize:12,color:"var(--text3)",flex:1}}>?? Esse score foi útil?</span>
+                <span style={{fontSize:12,color:"var(--text3)",flex:1}}>?? Esse score foi ï¿½til?</span>
 
               </div>
 
@@ -8710,7 +8710,7 @@ function ScoreViral() {
 
                   setFeedbackDado(true);
 
-                }} className="btn" style={{flex:1,fontSize:13}}>?? Útil</button>
+                }} className="btn" style={{flex:1,fontSize:13}}>?? ï¿½til</button>
 
                 <button onClick={()=>{
 
@@ -8788,15 +8788,15 @@ function MemoriaVortex() {
 
     {key:"estilo_escrita",label:"Estilo de escrita",icon:"??",placeholder:"Ex: informal, com humor, direto ao ponto"},
 
-    {key:"publico_alvo",label:"Público-alvo",icon:"??",placeholder:"Ex: jovens 18-25, gamers, mães empreendedoras"},
+    {key:"publico_alvo",label:"Pï¿½blico-alvo",icon:"??",placeholder:"Ex: jovens 18-25, gamers, mï¿½es empreendedoras"},
 
     {key:"formatos_favoritos",label:"Formatos favoritos",icon:"??",placeholder:"Ex: talking head, POV, trending sounds"},
 
-    {key:"evitar",label:"O que evitar",icon:"??",placeholder:"Ex: palavrão, política, assuntos pesados"},
+    {key:"evitar",label:"O que evitar",icon:"??",placeholder:"Ex: palavrï¿½o, polï¿½tica, assuntos pesados"},
 
     {key:"cta_favorito",label:"CTA favorito",icon:"??",placeholder:"Ex: Me segue pra mais! Comenta X se concordar"},
 
-    {key:"referencias",label:"Referências/inspirações",icon:"?",placeholder:"Ex: @fulano, Nubank, estilo Hormozi"},
+    {key:"referencias",label:"Referï¿½ncias/inspiraï¿½ï¿½es",icon:"?",placeholder:"Ex: @fulano, Nubank, estilo Hormozi"},
 
   ];
 
@@ -8808,11 +8808,11 @@ function MemoriaVortex() {
 
       <div className="page-header">
 
-        <div className="eyebrow"><div className="eyebrow-dot"/>Personalização</div>
+        <div className="eyebrow"><div className="eyebrow-dot"/>Personalizaï¿½ï¿½o</div>
 
-        <h1 className="page-title">Memória do <em>Vortex</em></h1>
+        <h1 className="page-title">Memï¿½ria do <em>Vortex</em></h1>
 
-        <p className="page-sub">O Vortex aprende com você. Essas informações ficam em todos os roteiros.</p>
+        <p className="page-sub">O Vortex aprende com vocï¿½. Essas informaï¿½ï¿½es ficam em todos os roteiros.</p>
 
       </div>
 
@@ -8828,7 +8828,7 @@ function MemoriaVortex() {
 
             display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0}}>
 
-            {perfil.nicho==="terror"?"??":perfil.nicho==="gaming"?"??":perfil.nicho==="finanças"?"??":"??"}
+            {perfil.nicho==="terror"?"??":perfil.nicho==="gaming"?"??":perfil.nicho==="finanï¿½as"?"??":"??"}
 
           </div>
 
@@ -8838,7 +8838,7 @@ function MemoriaVortex() {
 
             <div style={{fontSize:12,color:"var(--text3)"}}>
 
-              {perfil.nicho||"nicho não definido"} · {perfil.plataforma||"plataforma não definida"}
+              {perfil.nicho||"nicho nï¿½o definido"} ï¿½ {perfil.plataforma||"plataforma nï¿½o definida"}
 
             </div>
 
@@ -8846,7 +8846,7 @@ function MemoriaVortex() {
 
           <div style={{marginLeft:"auto",fontSize:11,color:"#7b2fff"}}>
 
-            {Object.keys(mem).length} memórias salvas
+            {Object.keys(mem).length} memï¿½rias salvas
 
           </div>
 
@@ -8856,7 +8856,7 @@ function MemoriaVortex() {
 
 
 
-      {/* Campos de memória */}
+      {/* Campos de memï¿½ria */}
 
       {CAMPOS.map(c=>(
 
@@ -8880,7 +8880,7 @@ function MemoriaVortex() {
 
                 {!mem[c.key]&&editando!==c.key&&(
 
-                  <div style={{fontSize:11,color:"var(--text3)"}}>Não definido</div>
+                  <div style={{fontSize:11,color:"var(--text3)"}}>Nï¿½o definido</div>
 
                 )}
 
@@ -8936,7 +8936,7 @@ function MemoriaVortex() {
 
       <div style={{textAlign:"center",fontSize:12,color:"var(--text3)",padding:"8px 0"}}>
 
-        ?? Essas memórias são usadas automaticamente em roteiros, chat e análises.
+        ?? Essas memï¿½rias sï¿½o usadas automaticamente em roteiros, chat e anï¿½lises.
 
       </div>
 
@@ -8958,7 +8958,7 @@ function MeusProjetos() {
 
   const ICONS={chat:"??",roteiro:"??",gerar_imagem:"??",gerar_video:"??",gerar_voz:"???",gerar_musica:"??",score_viral:"?"};
 
-  return(<div className="page"><div className="page-header"><div className="eyebrow"><div className="eyebrow-dot"/>meu espaço</div><h1 className="page-title">Meus <em>Projetos</em></h1><p className="page-sub">Histórico de criações.</p></div>{historico.length===0&&<div className="card" style={{textAlign:"center",padding:"3rem"}}><div style={{fontSize:48,marginBottom:12}}>??</div><p style={{color:"var(--text3)"}}>Nenhum projeto ainda.</p></div>}{historico.filter(h=>h.tipo==="debito").reverse().map((h,i)=><div key={i} className="card" style={{display:"flex",alignItems:"center",gap:12,padding:"12px 14px",marginBottom:6}}><span style={{fontSize:22,flexShrink:0}}>{ICONS[h.operacao?.split("_").slice(0,2).join("_")]||"??"}</span><div style={{flex:1}}><div style={{fontSize:13,fontWeight:500,color:"var(--text)",textTransform:"capitalize"}}>{(h.operacao||"").replace(/_/g," ")}</div><div style={{fontSize:11,color:"var(--text3)"}}>{new Date(h.timestamp).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</div></div><div style={{fontSize:12,color:"#f87171",fontWeight:600,flexShrink:0}}>-{h.quantidade} ??</div></div>)}</div>);
+  return(<div className="page"><div className="page-header"><div className="eyebrow"><div className="eyebrow-dot"/>meu espaï¿½o</div><h1 className="page-title">Meus <em>Projetos</em></h1><p className="page-sub">Histï¿½rico de criaï¿½ï¿½es.</p></div>{historico.length===0&&<div className="card" style={{textAlign:"center",padding:"3rem"}}><div style={{fontSize:48,marginBottom:12}}>??</div><p style={{color:"var(--text3)"}}>Nenhum projeto ainda.</p></div>}{historico.filter(h=>h.tipo==="debito").reverse().map((h,i)=><div key={i} className="card" style={{display:"flex",alignItems:"center",gap:12,padding:"12px 14px",marginBottom:6}}><span style={{fontSize:22,flexShrink:0}}>{ICONS[h.operacao?.split("_").slice(0,2).join("_")]||"??"}</span><div style={{flex:1}}><div style={{fontSize:13,fontWeight:500,color:"var(--text)",textTransform:"capitalize"}}>{(h.operacao||"").replace(/_/g," ")}</div><div style={{fontSize:11,color:"var(--text3)"}}>{new Date(h.timestamp).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</div></div><div style={{fontSize:12,color:"#f87171",fontWeight:600,flexShrink:0}}>-{h.quantidade} ??</div></div>)}</div>);
 
 }
 
@@ -8972,7 +8972,7 @@ const CURRENCIES = {
 
   USD:{ symbol:"$",  code:"USD", rate:0.20 },
 
-  EUR:{ symbol:"€",  code:"EUR", rate:0.18 },
+  EUR:{ symbol:"ï¿½",  code:"EUR", rate:0.18 },
 
 };
 
@@ -9008,7 +9008,7 @@ async function detectCurrency() {
 
 function useCurrency() {
 
-  // Moedas internacionais desativadas — só BRL por enquanto
+  // Moedas internacionais desativadas ï¿½ sï¿½ BRL por enquanto
 
   const currency = "BRL";
 
@@ -9088,7 +9088,7 @@ function Creditos() {
 
         <h1 className="page-title">Escolha seu <em>Plano</em></h1>
 
-        <p className="page-sub">Todos os planos com créditos que renovam todo mês.</p>
+        <p className="page-sub">Todos os planos com crï¿½ditos que renovam todo mï¿½s.</p>
 
       </div>
 
@@ -9102,7 +9102,7 @@ function Creditos() {
 
           <div style={{fontSize:11,color:"var(--text3)",marginBottom:6,letterSpacing:".1em"}}>
 
-            {preLaunch?"?? LANÇAMENTO EM":"? PREÇO DE LANÇAMENTO POR"}
+            {preLaunch?"?? LANï¿½AMENTO EM":"? PREï¿½O DE LANï¿½AMENTO POR"}
 
           </div>
 
@@ -9122,7 +9122,7 @@ function Creditos() {
 
           </div>
 
-          {showPromo&&<div style={{fontSize:11,color:"#34d399",marginTop:6}}>?? Preço de lançamento — garanta agora e mantém para sempre!</div>}
+          {showPromo&&<div style={{fontSize:11,color:"#34d399",marginTop:6}}>?? Preï¿½o de lanï¿½amento ï¿½ garanta agora e mantï¿½m para sempre!</div>}
 
         </div>
 
@@ -9140,7 +9140,7 @@ function Creditos() {
 
             <button key={t} onClick={()=>setTab(t)} style={{padding:"7px 18px",borderRadius:99,border:`.5px solid ${tab===t?"rgba(123,47,255,.5)":"var(--border2)"}`,background:tab===t?"rgba(123,47,255,.15)":"transparent",color:tab===t?"var(--purple2)":"var(--text3)",fontFamily:"var(--fh)",fontSize:12,fontWeight:700,cursor:"pointer"}}>
 
-              {t==="mensal"?"?? Mensal":"?? Créditos Avulsos"}
+              {t==="mensal"?"?? Mensal":"?? Crï¿½ditos Avulsos"}
 
             </button>
 
@@ -9166,9 +9166,9 @@ function Creditos() {
 
               <div>
 
-                <div style={{fontSize:14,fontWeight:700,color:"var(--text)"}}>Plano Free — R$0/mês</div>
+                <div style={{fontSize:14,fontWeight:700,color:"var(--text)"}}>Plano Free ï¿½ R$0/mï¿½s</div>
 
-                <div style={{fontSize:11,color:"var(--text3)"}}>50 créditos • ?? Tendências ilimitado • ? Score ilimitado • 3 roteiros/dia</div>
+                <div style={{fontSize:11,color:"var(--text3)"}}>50 crï¿½ditos ï¿½ ?? Tendï¿½ncias ilimitado ï¿½ ? Score ilimitado ï¿½ 3 roteiros/dia</div>
 
               </div>
 
@@ -9230,13 +9230,13 @@ function Creditos() {
 
                 <span style={{fontFamily:"var(--fh)",fontSize:"1.8rem",fontWeight:800,letterSpacing:"-.04em",color:sel===p.id?p.cor:"var(--text)"}}>{fmt(preco(p))}</span>
 
-                <span style={{fontSize:11,color:"var(--text3)"}}>/mês</span>
+                <span style={{fontSize:11,color:"var(--text3)"}}>/mï¿½s</span>
 
               </div>
 
-              {showPromo&&<div style={{fontSize:10,color:"#34d399",marginBottom:4}}>?? {Math.round((1-preco(p)/p.normal)*100)}% off lançamento</div>}
+              {showPromo&&<div style={{fontSize:10,color:"#34d399",marginBottom:4}}>?? {Math.round((1-preco(p)/p.normal)*100)}% off lanï¿½amento</div>}
 
-              <div style={{fontSize:12,color:"var(--text2)",marginBottom:8,fontWeight:600}}>?? {creditos_tab(p).toLocaleString()} créditos/mês</div>
+              <div style={{fontSize:12,color:"var(--text2)",marginBottom:8,fontWeight:600}}>?? {creditos_tab(p).toLocaleString()} crï¿½ditos/mï¿½s</div>
 
               {p.features&&sel===p.id&&(
 
@@ -9300,9 +9300,9 @@ function Creditos() {
 
               <div style={{fontFamily:"var(--fh)",fontSize:"1.8rem",fontWeight:800,letterSpacing:"-.04em",color:p.cor||"var(--accent)",marginBottom:4}}>{fmt(showPromo?p.promo:p.normal)}</div>
 
-              <div style={{fontSize:14,fontWeight:700,color:p.cor||"var(--accent)"}}>?? {p.creditos.toLocaleString()} créditos</div>
+              <div style={{fontSize:14,fontWeight:700,color:p.cor||"var(--accent)"}}>?? {p.creditos.toLocaleString()} crï¿½ditos</div>
 
-              <div style={{fontSize:10,color:"var(--text3)",marginTop:2}}>Não expiram · Uso livre</div>
+              <div style={{fontSize:10,color:"var(--text3)",marginTop:2}}>Nï¿½o expiram ï¿½ Uso livre</div>
 
               {sel==="pack_"+p.id&&p.features&&(
 
@@ -9358,7 +9358,7 @@ function Creditos() {
 
                   <span>{item.nome}</span>
 
-                  <span style={{fontWeight:700}}>{fmt(valor)}{!isPack?"/mês":""}</span>
+                  <span style={{fontWeight:700}}>{fmt(valor)}{!isPack?"/mï¿½s":""}</span>
 
                 </div>
 
@@ -9444,11 +9444,11 @@ function Configuracoes() {
 
 
 
-  const NICHOS=["terror","gaming","finanças","fitness","lifestyle","tech","motivacional","culinária","humor","anime","educacional","empreendedorismo"];
+  const NICHOS=["terror","gaming","finanï¿½as","fitness","lifestyle","tech","motivacional","culinï¿½ria","humor","anime","educacional","empreendedorismo"];
 
   const PLATS=["TikTok","Instagram","YouTube","Kwai","Pinterest"];
 
-  const IDIOMAS=["Português","Inglês","Espanhol"];
+  const IDIOMAS=["Portuguï¿½s","Inglï¿½s","Espanhol"];
 
 
 
@@ -9460,7 +9460,7 @@ function Configuracoes() {
 
         <div className="eyebrow"><div className="eyebrow-dot"/>Sistema</div>
 
-        <h1 className="page-title">Configu<em>rações</em></h1>
+        <h1 className="page-title">Configu<em>raï¿½ï¿½es</em></h1>
 
         <p className="page-sub">Personalize o Vortex para o seu perfil.</p>
 
@@ -9472,7 +9472,7 @@ function Configuracoes() {
 
       <div style={{display:"flex",gap:6,marginBottom:16,background:"rgba(255,255,255,.04)",borderRadius:12,padding:4}}>
 
-        {[{id:"perfil",icon:"??",label:"Perfil"},{id:"preferencias",icon:"??",label:"Preferências"},{id:"funcoes",icon:"??",label:"Funções"}].map(t=>(
+        {[{id:"perfil",icon:"??",label:"Perfil"},{id:"preferencias",icon:"??",label:"Preferï¿½ncias"},{id:"funcoes",icon:"??",label:"Funï¿½ï¿½es"}].map(t=>(
 
           <button key={t.id} onClick={()=>setAba(t.id)}
 
@@ -9506,7 +9506,7 @@ function Configuracoes() {
 
             <label className="label">Nome / Apelido</label>
 
-            <input className="input" placeholder="Ex: João, @joaocriador" value={perfil.nome||""} onChange={e=>setPer("nome",e.target.value)}/>
+            <input className="input" placeholder="Ex: Joï¿½o, @joaocriador" value={perfil.nome||""} onChange={e=>setPer("nome",e.target.value)}/>
 
           </div>
 
@@ -9542,7 +9542,7 @@ function Configuracoes() {
 
           <div className="field">
 
-            <label className="label">Idioma dos conteúdos</label>
+            <label className="label">Idioma dos conteï¿½dos</label>
 
             <div className="chips">
 
@@ -9556,11 +9556,11 @@ function Configuracoes() {
 
           <div className="field">
 
-            <label className="label">Tom de voz do conteúdo</label>
+            <label className="label">Tom de voz do conteï¿½do</label>
 
             <div className="chips">
 
-              {["Informal","Profissional","Humorístico","Dramático","Educativo"].map(t=>(
+              {["Informal","Profissional","Humorï¿½stico","Dramï¿½tico","Educativo"].map(t=>(
 
                 <button key={t} className={"chip "+(perfil.tom===t?"active":"")} onClick={()=>setPer("tom",t)}>{t}</button>
 
@@ -9586,19 +9586,19 @@ function Configuracoes() {
 
 
 
-      {/* ABA PREFERÊNCIAS */}
+      {/* ABA PREFERï¿½NCIAS */}
 
       {aba==="preferencias"&&(
 
         <div className="card" style={{marginBottom:12}}>
 
-          <div className="card-title" style={{marginBottom:14}}>?? Preferências do app</div>
+          <div className="card-title" style={{marginBottom:14}}>?? Preferï¿½ncias do app</div>
 
 
 
           <div className="field">
 
-            <label className="label">Duração padrão do roteiro</label>
+            <label className="label">Duraï¿½ï¿½o padrï¿½o do roteiro</label>
 
             <div className="chips">
 
@@ -9616,11 +9616,11 @@ function Configuracoes() {
 
           <div className="field">
 
-            <label className="label">Modelo padrão de chat</label>
+            <label className="label">Modelo padrï¿½o de chat</label>
 
             <div className="chips">
 
-              {["Auto (melhor disponível)","Claude","GPT-4o","Gemini","Groq (rápido)"].map(m=>(
+              {["Auto (melhor disponï¿½vel)","Claude","GPT-4o","Gemini","Groq (rï¿½pido)"].map(m=>(
 
                 <button key={m} className={"chip "+(config.modelo_padrao===m?"active":"")} onClick={()=>set("modelo_padrao",m)}>{m}</button>
 
@@ -9634,11 +9634,11 @@ function Configuracoes() {
 
           <div className="field">
 
-            <label className="label">País para tendências</label>
+            <label className="label">Paï¿½s para tendï¿½ncias</label>
 
             <div className="chips">
 
-              {["???? Brasil","???? EUA","???? Portugal","???? México"].map(p=>(
+              {["???? Brasil","???? EUA","???? Portugal","???? Mï¿½xico"].map(p=>(
 
                 <button key={p} className={"chip "+(config.pais===p?"active":"")} onClick={()=>set("pais",p)}>{p}</button>
 
@@ -9654,29 +9654,29 @@ function Configuracoes() {
 
 
 
-      {/* ABA FUNÇÕES */}
+      {/* ABA FUNï¿½ï¿½ES */}
 
       {aba==="funcoes"&&(
 
         <div className="card" style={{marginBottom:12}}>
 
-          <div className="card-title" style={{marginBottom:14}}>?? Funções ativas</div>
+          <div className="card-title" style={{marginBottom:14}}>?? Funï¿½ï¿½es ativas</div>
 
           {[
 
-            {key:"analise_perfil",name:"Análise de Perfil",desc:"Analisa perfis de redes sociais",icon:"??"},
+            {key:"analise_perfil",name:"Anï¿½lise de Perfil",desc:"Analisa perfis de redes sociais",icon:"??"},
 
             {key:"roteiro",name:"Gerador de Roteiro",desc:"Roteiros virais com IA",icon:"??"},
 
-            {key:"tendencias",name:"Tendências",desc:"Google Trends em tempo real",icon:"??"},
+            {key:"tendencias",name:"Tendï¿½ncias",desc:"Google Trends em tempo real",icon:"??"},
 
             {key:"gerador_imagem",name:"Imagens IA",desc:"FLUX, DALL-E e mais",icon:"??"},
 
-            {key:"gerador_video",name:"Vídeos IA",desc:"Disponível em julho",icon:"??"},
+            {key:"gerador_video",name:"Vï¿½deos IA",desc:"Disponï¿½vel em julho",icon:"??"},
 
             {key:"clonador_voz",name:"Clonar Voz",desc:"ElevenLabs voice cloning",icon:"???"},
 
-            {key:"musica",name:"Gerar Música",desc:"Trilhas para vídeos",icon:"??"},
+            {key:"musica",name:"Gerar Mï¿½sica",desc:"Trilhas para vï¿½deos",icon:"??"},
 
             {key:"score_viral",name:"Score Viral",desc:"Analisa potencial viral",icon:"?"},
 
@@ -9710,7 +9710,7 @@ function Configuracoes() {
 
       {msg&&<div style={{textAlign:"center",fontSize:13,color:"#34d399",padding:8,marginBottom:8}}>{msg}</div>}
 
-      <button className="btn btn-full" onClick={salvar}>?? Salvar configurações</button>
+      <button className="btn btn-full" onClick={salvar}>?? Salvar configuraï¿½ï¿½es</button>
 
     </div>
 
@@ -9756,7 +9756,7 @@ function WelcomeScreen({ onEnter }) {
 
 
 
-    // Canvas só com partículas sobre a imagem — sem buraco negro desenhado
+    // Canvas sï¿½ com partï¿½culas sobre a imagem ï¿½ sem buraco negro desenhado
 
 
 
@@ -9786,7 +9786,7 @@ function WelcomeScreen({ onEnter }) {
 
 
 
-      // Partículas saindo do centro (buraco negro na imagem)
+      // Partï¿½culas saindo do centro (buraco negro na imagem)
 
       stars.forEach(s=>{
 
@@ -9796,7 +9796,7 @@ function WelcomeScreen({ onEnter }) {
 
         cx.fillStyle=s.color;cx.globalAlpha=tw*.7;cx.fill();
 
-        // Move partículas para fora do centro (efeito vórtice)
+        // Move partï¿½culas para fora do centro (efeito vï¿½rtice)
 
         const dx=s.x-CX, dy=s.y-CY;
 
@@ -9866,19 +9866,19 @@ function WelcomeScreen({ onEnter }) {
 
     const LINES=[
 
-      {h:"Crie conteúdo\nque viraliza.",s:"Roteiros, hooks e tendências com IA."},
+      {h:"Crie conteï¿½do\nque viraliza.",s:"Roteiros, hooks e tendï¿½ncias com IA."},
 
 
 
-      {h:"Do nada ao vídeo\nem segundos.",s:"Cole o tema — o Vortex faz o resto."},
+      {h:"Do nada ao vï¿½deo\nem segundos.",s:"Cole o tema ï¿½ o Vortex faz o resto."},
 
 
 
-      {h:"Trends antes\nde todos.",s:"Fique um passo à frente do algoritmo."},
+      {h:"Trends antes\nde todos.",s:"Fique um passo ï¿½ frente do algoritmo."},
 
 
 
-      {h:"Seu criativo.\nNossa inteligência.",s:"Estúdio de IA para criadores brasileiros."},
+      {h:"Seu criativo.\nNossa inteligï¿½ncia.",s:"Estï¿½dio de IA para criadores brasileiros."},
 
 
 
@@ -9926,7 +9926,7 @@ function WelcomeScreen({ onEnter }) {
 
         <div style={{fontFamily:"'Syne',sans-serif",fontSize:10,fontWeight:700,letterSpacing:".22em",textTransform:"uppercase",color:"#4a4470",marginBottom:12}}>
 
-          VOR<span style={{color:"#9d5cff",textShadow:"0 0 12px rgba(123,47,255,.8)"}}>TEX</span> · AI Creator Studio
+          VOR<span style={{color:"#9d5cff",textShadow:"0 0 12px rgba(123,47,255,.8)"}}>TEX</span> ï¿½ AI Creator Studio
 
         </div>
 
@@ -10000,7 +10000,7 @@ function Onboarding({ onConcluir }) {
 
       if(!boasVindas)setBoasVindas("Vortex configurado para "+dados.nicho+"! ??");
 
-    } catch { setBoasVindas("Pronto! Vamos criar conteúdo viral! ??"); }
+    } catch { setBoasVindas("Pronto! Vamos criar conteï¿½do viral! ??"); }
 
     finally { setLoading(false); setStep(3); }
 
@@ -10016,11 +10016,11 @@ function Onboarding({ onConcluir }) {
 
       {step<3&&<div className="ob-dots">{dots}</div>}
 
-      {step===0&&<><div className="ob-title">Qual é o seu<br/><em>nicho?</em></div><p className="ob-sub">O Vortex vai personalizar tudo para você.</p><div className="field"><label className="label">Nome do canal (opcional)</label><input className="input" placeholder="Ex: Canal do Crispinho" value={dados.nome_canal} onChange={e=>set("nome_canal",e.target.value)}/></div><div className="field"><label className="label">Nicho</label><div className="ob-chips">{NICHOS_OB.map(n=><button key={n} className={`ob-chip ${dados.nicho===n?"active":""}`} onClick={()=>set("nicho",n)}>{n}</button>)}</div></div><div className="ob-nav"><button className="btn btn-full" onClick={()=>setStep(1)} disabled={!dados.nicho}>Continuar ?</button></div></>}
+      {step===0&&<><div className="ob-title">Qual ï¿½ o seu<br/><em>nicho?</em></div><p className="ob-sub">O Vortex vai personalizar tudo para vocï¿½.</p><div className="field"><label className="label">Nome do canal (opcional)</label><input className="input" placeholder="Ex: Canal do Crispinho" value={dados.nome_canal} onChange={e=>set("nome_canal",e.target.value)}/></div><div className="field"><label className="label">Nicho</label><div className="ob-chips">{NICHOS_OB.map(n=><button key={n} className={`ob-chip ${dados.nicho===n?"active":""}`} onClick={()=>set("nicho",n)}>{n}</button>)}</div></div><div className="ob-nav"><button className="btn btn-full" onClick={()=>setStep(1)} disabled={!dados.nicho}>Continuar ?</button></div></>}
 
-      {step===1&&<><div className="ob-title">Onde você<br/><em>posta?</em></div><p className="ob-sub">Selecione plataformas e dias.</p><div className="field"><label className="label">Plataformas</label><div className="ob-chips">{PLATS_OB.map(p=><button key={p} className={`ob-chip ${dados.plataformas.includes(p)?"active":""}`} onClick={()=>toggle("plataformas",p)}>{p}</button>)}</div></div><div className="field"><label className="label">Dias de postagem</label><div className="ob-dias">{DIAS_OB.map(d=><button key={d} className={`ob-dia ${dados.dias_postagem.includes(d)?"active":""}`} onClick={()=>toggle("dias_postagem",d)}>{d}</button>)}</div></div><div className="ob-nav"><button className="btn btn-ghost" style={{minWidth:90}} onClick={()=>setStep(0)}>? Voltar</button><button className="btn btn-full" onClick={()=>setStep(2)} disabled={dados.plataformas.length===0}>Continuar ?</button></div></>}
+      {step===1&&<><div className="ob-title">Onde vocï¿½<br/><em>posta?</em></div><p className="ob-sub">Selecione plataformas e dias.</p><div className="field"><label className="label">Plataformas</label><div className="ob-chips">{PLATS_OB.map(p=><button key={p} className={`ob-chip ${dados.plataformas.includes(p)?"active":""}`} onClick={()=>toggle("plataformas",p)}>{p}</button>)}</div></div><div className="field"><label className="label">Dias de postagem</label><div className="ob-dias">{DIAS_OB.map(d=><button key={d} className={`ob-dia ${dados.dias_postagem.includes(d)?"active":""}`} onClick={()=>toggle("dias_postagem",d)}>{d}</button>)}</div></div><div className="ob-nav"><button className="btn btn-ghost" style={{minWidth:90}} onClick={()=>setStep(0)}>? Voltar</button><button className="btn btn-full" onClick={()=>setStep(2)} disabled={dados.plataformas.length===0}>Continuar ?</button></div></>}
 
-      {step===2&&<><div className="ob-title">Como você<br/><em>fala?</em></div><p className="ob-sub">Define como o Vortex escreve para você.</p><div className="field"><label className="label">Tom de voz</label><div className="ob-chips">{TONS_OB.map(t=><button key={t} className={`ob-chip ${dados.tom_de_voz===t?"active":""}`} onClick={()=>set("tom_de_voz",t)}>{t}</button>)}</div></div><div className="field"><label className="label">Objetivo</label><div className="ob-chips">{OBJS_OB.map(o=><button key={o} className={`ob-chip ${dados.objetivo===o?"active":""}`} onClick={()=>set("objetivo",o)}>{o}</button>)}</div></div><div className="ob-nav"><button className="btn btn-ghost" style={{minWidth:90}} onClick={()=>setStep(1)}>? Voltar</button><button className="btn btn-full" onClick={concluir} disabled={loading||!dados.tom_de_voz}>{loading?<><div className="spinner"/>Configurando...</>:"?? Concluir"}</button></div></>}
+      {step===2&&<><div className="ob-title">Como vocï¿½<br/><em>fala?</em></div><p className="ob-sub">Define como o Vortex escreve para vocï¿½.</p><div className="field"><label className="label">Tom de voz</label><div className="ob-chips">{TONS_OB.map(t=><button key={t} className={`ob-chip ${dados.tom_de_voz===t?"active":""}`} onClick={()=>set("tom_de_voz",t)}>{t}</button>)}</div></div><div className="field"><label className="label">Objetivo</label><div className="ob-chips">{OBJS_OB.map(o=><button key={o} className={`ob-chip ${dados.objetivo===o?"active":""}`} onClick={()=>set("objetivo",o)}>{o}</button>)}</div></div><div className="ob-nav"><button className="btn btn-ghost" style={{minWidth:90}} onClick={()=>setStep(1)}>? Voltar</button><button className="btn btn-full" onClick={concluir} disabled={loading||!dados.tom_de_voz}>{loading?<><div className="spinner"/>Configurando...</>:"?? Concluir"}</button></div></>}
 
       {step===3&&<div className="ob-fim">
 
@@ -10030,9 +10030,9 @@ function Onboarding({ onConcluir }) {
 
         {boasVindas&&<div className="ob-bv">{boasVindas}</div>}
 
-        {exemploHook&&<div style={{background:"rgba(123,47,255,.1)",border:".5px solid rgba(123,47,255,.3)",borderRadius:12,padding:"12px 14px",margin:"12px 0",textAlign:"left"}}><div style={{fontSize:10,color:"var(--accent)",fontWeight:700,marginBottom:6,letterSpacing:1}}>? PREVIEW — HOOK VIRAL</div><div style={{fontSize:14,fontWeight:700,color:"var(--text)",lineHeight:1.5,fontStyle:"italic"}}>"{exemploHook}"</div></div>}
+        {exemploHook&&<div style={{background:"rgba(123,47,255,.1)",border:".5px solid rgba(123,47,255,.3)",borderRadius:12,padding:"12px 14px",margin:"12px 0",textAlign:"left"}}><div style={{fontSize:10,color:"var(--accent)",fontWeight:700,marginBottom:6,letterSpacing:1}}>? PREVIEW ï¿½ HOOK VIRAL</div><div style={{fontSize:14,fontWeight:700,color:"var(--text)",lineHeight:1.5,fontStyle:"italic"}}>"{exemploHook}"</div></div>}
 
-        <div style={{fontSize:12,color:"var(--text3)",margin:".5rem 0 1.25rem"}}>{dados.nicho&&<span>Nicho: <strong style={{color:"var(--purple2)"}}>{dados.nicho}</strong></span>}{dados.plataformas.length>0&&<span> · {dados.plataformas.join(", ")}</span>}</div>
+        <div style={{fontSize:12,color:"var(--text3)",margin:".5rem 0 1.25rem"}}>{dados.nicho&&<span>Nicho: <strong style={{color:"var(--purple2)"}}>{dados.nicho}</strong></span>}{dados.plataformas.length>0&&<span> ï¿½ {dados.plataformas.join(", ")}</span>}</div>
 
         <button className="btn btn-full" onClick={onConcluir}>Entrar no Vortex ?</button>
 
@@ -10086,7 +10086,7 @@ export default function App() {
 
         if(params.get("login")==="ok")window.history.replaceState({},"",window.location.pathname);
 
-        if(params.get("pagamento")==="ok"){window.history.replaceState({},"",window.location.pathname);setTimeout(()=>alert("? Pagamento confirmado! Créditos adicionados."),1000);}
+        if(params.get("pagamento")==="ok"){window.history.replaceState({},"",window.location.pathname);setTimeout(()=>alert("? Pagamento confirmado! Crï¿½ditos adicionados."),1000);}
 
         const r=await fetch(`${BACKEND}/auth/me`).catch(()=>null);
 
@@ -10098,7 +10098,7 @@ export default function App() {
 
           setSaldo(d.usuario.creditos||0);
 
-          setScreen("app"); // já logado ? pular welcome
+          setScreen("app"); // jï¿½ logado ? pular welcome
 
         }
 
@@ -10146,7 +10146,7 @@ export default function App() {
 
 
 
-  // Modal de login — aparece quando usuário tenta usar feature paga
+  // Modal de login ï¿½ aparece quando usuï¿½rio tenta usar feature paga
 
   const [showLogin, setShowLogin] = useState(false);
 
@@ -10154,9 +10154,9 @@ export default function App() {
 
 
 
-  // Função global para pedir login
+  // Funï¿½ï¿½o global para pedir login
 
-  window.__vortexPedirLogin = (msg="Faça login para continuar") => {
+  window.__vortexPedirLogin = (msg="Faï¿½a login para continuar") => {
 
     setLoginMsg(msg);
 
@@ -10174,7 +10174,7 @@ export default function App() {
 
 
 
-      {/* Modal de Login — aparece sobre qualquer tela */}
+      {/* Modal de Login ï¿½ aparece sobre qualquer tela */}
 
       {showLogin && (
 
@@ -10258,7 +10258,7 @@ export default function App() {
 
             <div style={{fontSize:10,color:"#444",marginTop:16}}>
 
-              Ao entrar você concorda com nossos termos de uso
+              Ao entrar vocï¿½ concorda com nossos termos de uso
 
             </div>
 
@@ -10342,7 +10342,7 @@ export default function App() {
 
                 <span className="pill pill-green"><span className="pill-dot" style={{background:"var(--green)"}}/>online</span>
 
-                <span className="pill pill-purple" style={{cursor:"pointer"}} onClick={()=>setAba("creditos")}>? {saldo} créditos</span>
+                <span className="pill pill-purple" style={{cursor:"pointer"}} onClick={()=>setAba("creditos")}>? {saldo} crï¿½ditos</span>
 
                 {usuario?(
 
